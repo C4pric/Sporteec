@@ -47,10 +47,11 @@ Architecture :
         cette liste est fournie par l'etape du dessus.
 
         - renvoi une page web qui contien tous les resultats
+        sur cette page on peut choisir des crenaux et tout valider
 
     - accept match
         allow to select a request and accept it
-        - prend en entree une liste de crenaux choisis. 
+        - prend en entree une liste de crenaux choisis. (de l'etape precedente)
         - envoie une notification aux participants comme quoi aan est interresse et les met en contact.
 
 
