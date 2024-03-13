@@ -32,6 +32,9 @@ Architecture :
         et elle renvoie la liste de personnes disponible
 
         - prend en entree des criteres : Sport , heure , lieux , niveau , compte (token)
+        Sport , heure , lieux sont renseignes par l'utilisateur.
+        compte (token) est stocke dans les cookies
+        niveau est stocke dans la base de donnes de compte on le recupere grace au token
 
         - envoi les infos a la base de donne : Sport , heure , lieux , niveau , compte (token)
 
@@ -41,8 +44,10 @@ Architecture :
         render the list of compatible request
 
         - prend en entree une liste de compte/crenaux de sport et renvoi une page web pour selectionner les crenaux que l'ont veut : Sport , heure , lieux , niveau , compte (token)
+        cette liste est fournie par l'etape du dessus.
 
         - renvoi une page web qui contien tous les resultats
+
     - accept match
         allow to select a request and accept it
         - prend en entree une liste de crenaux choisis. 
