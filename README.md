@@ -4,6 +4,12 @@
 
 Architecture : 
 
+- base de donnes sql
+
+    - liste de comptes
+
+    - liste de demande
+
 - wepbpage
 
     - account creation
