@@ -54,11 +54,16 @@ Architecture :
         - Prend en entrée une liste de crénaux choisis. (de l'étape précedente)
         - Envoie une notification aux participants comme quoi une personne est intérressé et les mets en contact.
 
-
 # Trophée NSI
 
 Sporteec est une WebApp permettant de trouver des partenaires pour pratiquer vos sports favoris. Il suffit simplement de vous inscrire, sélectionner votre/vos sport(s) puis votre niveau dans ce sport et notre site vous trouvera automatiquement un ou plusieurs partenaires adaptés à vos critères. 
 
+# Statut de projet
+
+en cours :
+- répartition des taches
+- division en équipe pour s'occuper d'une tache
+- architecture du site et aspects global
 
 # participant
 
