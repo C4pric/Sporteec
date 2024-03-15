@@ -32,14 +32,13 @@ body {
 }
 
 .content button {
-    text-decoration-skip-ink: auto;
+    text-decoration: none;
     display: block; /* Rendre le bouton un élément de bloc */
-    width: 100%; /* Largeur du bouton */
+    width: 80%; /* Largeur du bouton */
     height: 100px; /* Hauteur du bouton */
     margin: 50px auto; /* Centrer horizontalement */
     border: 1px solid #ccc; /* Bordure */
     border-radius: 15px; /* Bords arrondis */
-    font-size: 40px; /* Taille de la police */
-
+    font-size: 30px; /* Taille de la police */
     cursor: pointer; /* Curseur */
 }
