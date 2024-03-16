@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url('background.png');
+  background-image: url('inscription_connection.png');
   background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'arrière-plan */
   background-position: center; /* Centre l'image de fond */
 }
@@ -249,7 +249,7 @@ button.ghost {
 }
 
 body {
-  background-image: url('background.png');
+  background-image: url('inscription_connection.png');
   background-size: auto 250%; /* Zoom sur l'image, elle ne prendra pas tout l'écran */
   background-position: center; /* Centre initial */
   font-family: 'Roboto Condensed', sans-serif;
