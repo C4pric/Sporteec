@@ -1,4 +1,5 @@
 
+
 * {
   margin: 0;
   padding: 0;
@@ -152,6 +153,27 @@ p {
 .overlay-left {
   -webkit-transform: translateX(-20%);
           transform: translateX(-20%);
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 5px;
+  height: 50px;
+  width: 40px;
 }
 
 button {
@@ -380,7 +402,20 @@ a {
     transform: translateX(-20%);
 }
 
+.social-container {
+    margin: 20px 0;
 
+    a {
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        height: 40px;
+        width: 40px;
+    }
+}
 
 button {
     border-radius: 20px;
