@@ -1,239 +1,13 @@
-
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   background-image: url('inscription_connection.png');
-  background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'arrière-plan */
-  background-position: center; /* Centre l'image de fond */
-}
-
-
-h1 {
-  font-weight: 700px;
-  margin-bottom: 230px; /* Ajoute une marge en bas de h1 */
-}
-
-p {
-  font-size: 14px;
-  font-weight: 100px;
-  line-height: 20px;
-  letter-spacing: .5px;
-  margin: 20px 0 30px;
-}
-.container {
-  background: rgba(255, 255, 255, 0.788); /* Couleur de fond pour contenir vos éléments (avec transparence) */
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
-              0 10px 10px rgba(0, 0, 0, 0.22);
-  position: relative;
-  overflow: hidden;
-  width: 768px;
-  max-width: 100%;
-  min-height: 480px;
-}
-
-.form-container {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  -webkit-transition: all .6s ease-in-out;
-  transition: all .6s ease-in-out;
-}
-
-.form-container form {
-  background: #ffffffa7;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 0 50px;
-  height: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-}
-
-.form-container input {
-  background: #d6d6d6;
-  border: none;
-  padding: 12px 15px;
-  width: 100%;
-}
-
-.sign-up-container {
-  left: 0;
-  width: 50%;
-  opacity: 0;
-  z-index: 1;
-}
-
-.sign-in-container {
-  left: 0;
-  width: 50%;
-  z-index: 2;
-}
-
-.overlay-container {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  -webkit-transition: -webkit-transform .6s ease-in-out;
-  transition: -webkit-transform .6s ease-in-out;
-  transition: transform .6s ease-in-out;
-  transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
-  z-index: 100;
-}
-
-.overlay {
-  background: #41c9ff;
-  background: -webkit-gradient(linear, left top, right top, from(#2bc3ff), to(#41a3ff)) no-repeat 0 0/cover;
-  background: linear-gradient(to right, #f19430, #ff416c) no-repeat 0 0/cover;
-  color: #ffffff;
-  position: relative;
-  left: -100%;
-  height: 100%;
-  width: 200%;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: -webkit-transform .6s ease-in-out;
-  transition: -webkit-transform .6s ease-in-out;
-  transition: transform .6s ease-in-out;
-  transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
-}
-
-.overlay-panel {
-  position: absolute;
-  top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 40px;
-  height: 100%;
-  width: 50%;
-  text-align: center;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: -webkit-transform .6s ease-in-out;
-  transition: -webkit-transform .6s ease-in-out;
-  transition: transform .6s ease-in-out;
-  transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
-}
-
-.overlay-right {
-  right: 0;
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-}
-
-.overlay-left {
-  -webkit-transform: translateX(-20%);
-          transform: translateX(-20%);
-}
-
-
-
-button {
-  border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background: #ff4b2b;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700px;
-  padding: 12px 45px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  -webkit-transition: -webkit-transform 80ms ease-in;
-  transition: -webkit-transform 80ms ease-in;
-  transition: transform 80ms ease-in;
-  transition: transform 80ms ease-in, -webkit-transform 80ms ease-in;
-}
-
-button.sign-up-button {
-  margin-top: 20px;
-}
-
-button:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-}
-
-button:focus {
-  outline: none;
-}
-
-button.ghost {
-  background: transparent;
-  border-color: #fff;
-}
-
-.container.right-panel-active .sign-in-container {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-}
-
-.container.right-panel-active .overlay-container {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-}
-
-.container.right-panel-active .sign-up-container {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  opacity: 1;
-  z-index: 5;
-}
-
-.container.right-panel-active .overlay {
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
-}
-
-.container.right-panel-active .overlay-left {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
-.container.right-panel-active .overlay-right {
-  -webkit-transform: translateX(20%);
-          transform: translateX(20%);
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-  background-image: url('inscription_connection.png');
-  background-size: auto 250%; /* Zoom sur l'image, elle ne prendra pas tout l'écran */
-  background-position: center; /* Centre initial */
+  background-size: auto 250%;
+  background-position: center;
   font-family: 'Roboto Condensed', sans-serif;
   display: flex;
   flex-direction: column;
@@ -241,7 +15,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: -20px 0 50px;
-  animation: moveBackground 100s linear infinite; /* Animation avec une durée de 60 secondes */
+  animation: moveBackground 100s linear infinite;
 }
 
 @keyframes moveBackground {
@@ -262,29 +36,17 @@ body {
   }
 }
 
-
-
-
 h1 {
     font-weight: 700px;
-    margin-bottom: 30px; /* Ajoute une marge en bas de h1 */
+    margin-bottom: 30px;
 }
 
 p {
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 100px;
     line-height: 20px;
     letter-spacing: .5px;
     margin: 20px 0 30px;
-}
-
-
-
-a {
-    color: #333;
-    font-size: 14px;
-    text-decoration: none;
-    margin: 15px 0;
 }
 
 .container {
@@ -306,7 +68,7 @@ a {
     transition: all .6s ease-in-out;
 
     form {
-        background: #ffffff;
+        background: #fffefe;
         display: flex;
         flex-direction: column;
         padding: 0 50px;
@@ -317,7 +79,7 @@ a {
     }
 
     input {
-        background: #eeeeee;
+        background: #f5f4f4;
         border: none;
         padding: 12px 15px;
         width: 100%;
@@ -349,9 +111,9 @@ a {
 }
 
 .overlay {
-    background: #ff416c;
-    background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
-    color: #fff;
+    background: #ff416d;
+    background: linear-gradient(to right, #d5ff2b, #ff416c) no-repeat 0 0 / cover;
+    color: #ffffff;
     position: relative;
     left: -100%;
     height: 100%;
@@ -415,25 +177,20 @@ button.ghost {
     border-color: #fff;
 }
 
- Animation
-/ Move Sign In Right
 .container.right-panel-active .sign-in-container {
     transform: translateX(100%);
 }
 
- Move overlay to left
 .container.right-panel-active .overlay-container{
     transform: translateX(-100%);
 }
 
- bring sign up over sign in 
 .container.right-panel-active .sign-up-container {
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
 }
 
- Move OverLay Back to right
 .container.right-panel-active .overlay {
     transform: translateX(50%);
 }
@@ -445,3 +202,44 @@ button.ghost {
 .container.right-panel-active .overlay-right {
     transform: translateX(20%);
 }
+
+a.forgot-password {
+  text-decoration: none; /* Supprime la soulignement */
+  color: rgb(0, 0, 0); /* Change la couleur du lien en bleu */
+  margin-bottom: 15px;
+  margin-left: 140px;
+  font-size: 15px;
+}
+
+.password-container {
+    position: relative;
+}
+
+#passwordInput {
+    padding-right: 30px; /* Pour laisser de l'espace pour l'icône */
+}
+
+.password-container {
+    position: relative;
+}
+
+.eye-button {
+    position: absolute;
+    right: 50px; /* Ajustez ceci selon votre préférence */
+    top: 63.5%; /* Pour la partie inscription */
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 4px; /* Ajustez la taille de la zone cliquable */
+}
+
+.sign-in-container .eye-button {
+    top: 54%; /* Pour la partie connexion */
+}
+
+.eye-button img {
+    width: 18px;
+    height: auto;
+}
+
