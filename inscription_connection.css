@@ -226,7 +226,7 @@ a.forgot-password {
 .eye-button {
     position: absolute;
     right: 50px; /* Ajustez ceci selon votre préférence */
-    top: 63.5%; /* Pour la partie inscription */
+    top: 61%; /* Pour la partie inscription */
     transform: translateY(-50%);
     border: none;
     background: none;
