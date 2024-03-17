@@ -112,7 +112,7 @@ p {
 
 .overlay {
     background: #ff416d;
-    background: linear-gradient(to right, #d5ff2b, #ff416c) no-repeat 0 0 / cover;
+    background: linear-gradient(to right, #dc0073, #6eeb83) no-repeat 0 0 / cover;
     color: #ffffff;
     position: relative;
     left: -100%;
@@ -241,5 +241,40 @@ a.forgot-password {
 .eye-button img {
     width: 18px;
     height: auto;
+}
+
+
+
+/* Styles pour les radios boutons */
+.radios {
+    display: flex; /* Affiche les radios boutons en ligne */
+    justify-content: center; /* Centre les radios boutons horizontalement */
+    align-items: center; /* Centre les radios boutons verticalement */
+}
+
+.radios input[type="radio"] {
+    display: none; /* Masquer les radios boutons par défaut */
+}
+
+.radios label {
+    margin: 0 10px; /* Marge autour des labels */
+    cursor: pointer; /* Curseur pointer pour indiquer l'interaction */
+}
+
+/* Styles pour les radios boutons */
+.radios input[type="radio"] + label::before {
+    content: '';
+    display: inline-block;
+    width: 20px; /* Largeur du radio bouton */
+    height: 20px; /* Hauteur du radio bouton */
+    border: 2px solid rgb(0, 0, 0); /* Bordure bleue */
+    border-radius: 50%; /* Pour créer un cercle */
+    margin-right: 5px; /* Espacement entre le radio bouton et le label */
+    vertical-align: middle; /* Alignement vertical */
+}
+
+/* Styles pour les radios boutons cochés */
+.radios input[type="radio"]:checked + label::before {
+    background-color: rgb(0, 0, 0); /* Fond bleu lorsque sélectionné */
 }
 
