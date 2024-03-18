@@ -36,6 +36,22 @@ body {
   }
 }
 
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+.logo {
+    max-width: 110px;
+    border-radius: 28px;
+  }
+
 h1 {
     font-weight: 700px;
     margin-bottom: 30px;
@@ -113,7 +129,7 @@ p {
 .overlay {
     background: #ff416d;
     background: linear-gradient(to right, #dc0073, #6eeb83) no-repeat 0 0 / cover;
-    color: #ffffff;
+    color: #e2cfcf;
     position: relative;
     left: -100%;
     height: 100%;
@@ -149,9 +165,9 @@ p {
 
 button {
     border-radius: 20px;
-    border: 1px solid #ff4b2b;
-    background: #ff4b2b;
-    color: #fff;
+    border: 1px solid #ef7f63;
+    background: #f06543;
+    color: #ffffff;
     font-size: 12px;
     font-weight: 700px;
     padding: 12px 45px;
