@@ -23,13 +23,13 @@
                 <input type="text" placeholder="Prénom">
                 <input type="email" placeholder="Email" />
                 <input type="password" id="passwordInputSignup" placeholder="Mot de passe" />
-                <button type="button" id="togglePasswordSignup" class="eye-button"><img src="eye_v.png" id="eyeIconSignup" alt="Toggle Password Visibility"></button>
+                <btn type="button" id="togglePasswordSignup" class="eye-button"><img src="eye_v.png" id="eyeIconSignup" alt="Toggle Password Visibility"></btn>
                 <div class="radios">
-                    <input type="radio" id="radio1" name="radioGroup" checked>
+                    <input type="radio" id="radio1" name="radioGroup" value="homme" checked>
                     <label for="radio1">Homme</label>
-                    <input type="radio" id="radio2" name="radioGroup">
+                    <input type="radio" id="radio2" name="radioGroup" value="femme">
                     <label for="radio2">Femme</label>
-                    <input type="radio" id="radio3" name="radioGroup">
+                    <input type="radio" id="radio3" name="radioGroup" value="autre">
                     <label for="radio3">Autre</label>
                 </div>
                 <button class="sign-up-button">S'inscrire</button>
@@ -40,7 +40,7 @@
                 <h1>Se connecter</h1>
                 <input type="email" placeholder="Email" />
                 <input type="password" id="passwordInputLogin" placeholder="Mot de passe" />
-                <button type="button" id="togglePasswordLogin" class="eye-button"><img src="eye_v.png" id="eyeIconLogin" alt="Toggle Password Visibility"></button>
+                <btn type="button" id="togglePasswordLogin" class="eye-button"><img src="eye_v.png" id="eyeIconLogin" alt="Toggle Password Visibility"></btn>
                 <a class="a forgot-password" href="#">Mot de passe oublié?</a>
                 <button>Se conneter</button>
             </form>
@@ -64,5 +64,3 @@
     <script src="inscription_connection.js"></script>
 </body>
 </html>
-
-
