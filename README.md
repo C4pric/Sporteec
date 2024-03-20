@@ -77,6 +77,7 @@ Rayan
 Thomas
 Clement
 Julien
+Julie
 
 mettez vos noms a cote de la partie de la web page sur laquelle vous voulez bosser essayer d'etre equilibré
 
