@@ -1,0 +1,160 @@
+body,header{
+    margin: 0;
+}
+body {
+   
+    font-family: Arial, sans-serif;
+  }
+  
+  #sidebar1{
+    position: fixed;
+    margin-top: 124px;
+    left: 0;
+    width: 17%;
+    height: 100%;
+    background-color: #dadada94;
+    color: #fff;
+    overflow-y: auto; /* Permet le défilement vertical */
+    padding-top: 20px;
+  }
+  #sidebar2{
+    position: fixed;
+    margin-top: 124px;
+    right: 0;
+    width: 83%;
+    height: 100%;
+    background-color: #f8e0e0;
+    color: #fff;
+    overflow-y: auto;
+    
+    padding-top: 20px;
+  }
+  .case{
+    width: 50%;
+    height: 50%;
+    background-color: #f8e0e000;
+    color: #000000;
+    border-radius: 10px;
+
+    padding-top: 20px;
+  }
+  
+  .scrollable-content {
+    padding: 20px;
+  }
+  
+  /* Style de la barre défilante */
+  .sidebar h2 {
+    margin-top: 0;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #555;
+  }
+  
+  .sidebar ul li:last-child {
+    border-bottom: none;
+  }
+
+  .mascotte_bad{
+    text-align: center;
+  }
+  .mascotte_bad img {
+    width: 80%; /* Ajustez la taille selon votre préférence */
+    max-width: 500px; /* Taille maximale de l'image */
+    display: block; /* Pour centrer verticalement */
+    margin: 0 auto; /* Pour centrer horizontalement */
+  }
+  
+::-webkit-scrollbar {  /* Barre de défilement */
+    width: 5px;
+  }
+  
+  /* Couleur de la piste de défilement */
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+  /* Couleur du curseur de défilement */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+  
+  /* Au survol de la barre de défilement */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  .logos{
+    width: 50% ;
+    margin-bottom: 50px;
+  }
+  .subtitle{
+    color:#0086d3 ; 
+    font-size: 30px;
+  }
+
+header {
+    background: linear-gradient(to right, #dc0073, #1ff6fd) no-repeat 0 0 / cover;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+
+    .logo img {
+        margin-left: -400px;
+        border-radius: 28px;
+        max-width: 100px;
+    }
+
+    nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    }
+
+    nav ul li {
+    display: inline;
+    margin-right: 30px; /* Réduit l'espacement entre les éléments de navigation */
+    }
+
+    nav ul li:last-child {
+    margin-right: 0;
+    }
+
+    nav ul li a {
+    color: #ff0000;
+    text-decoration: none;
+    }
+
+    .btn {
+    font-family: "Lexend", sans-serif;
+    background-color: #0066ff;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 60%;
+    
+    }
+
+    .photo{
+        width: 100px;
+        margin-right: 40px;
+        margin-top: 5%;
+    }
