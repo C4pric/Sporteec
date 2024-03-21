@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="mb-4">
+            <div class="mb-4">
+                <h1 class="display-1">{{title}}</h1>
+                <h6 class="display-6">By {{author_username}}</h6>
+            </div>
+            <zero-md no-shadow>
+                <script type="text/markdown">{{content}}</script>
+            </zero-md>
+        </div>
+        <div class="card text-center mb-4">
+            <div class="card-header">
+                Description
+            </div>
+            <div class="card-body">
+                <zero-md>
+                    <script type="text/markdown">{{context}}</script>    
+                </zero-md>
+            </div>
+            <div class="card-footer text-muted">
+                {{date}}
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                Likes : {{likes}}
+            </div>
+            <div class="col">
+                Dislikes: {{dislikes}}
+            </div>
+            <div class="col">
+                <button type="button", class="btn btn-primary">Report</button>
+            </div>
+            <div class="col">
+                <button type="button", class="btn btn-outline-primaryc">Options</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header ml-2">Comments</div>
+            {% for comment in comments %}
+                <p><strong>{{comment["username"]}} : </strong>{{comment["content"]}}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock}

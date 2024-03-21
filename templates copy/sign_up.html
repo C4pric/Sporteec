@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div class="container">
+        <a href="/" class="link-primary">Link to the home page</a>
+        <form method="post" action="/sign-up">
+            <div class="form-outline mb-4">
+                <label class="form-label" for="username-input">Username</label>
+                <input name="username" type="text" id="username-input" class="form-control" autocomplete="off"/>
+            </div>
+
+
+            <div class="form-outline mb-4">
+                <label class="form-label" for="password-input">Password</label>
+                <input name="password" type="password" id="password-input" class="form-control"/>
+            </div>
+
+
+            {% if input_not_valid %}
+                <p class="text-warning">Your input (username and/or password) is <strong>invalid</strong>.</p>
+            {% elif username_already_exists %}
+                <p class="text-warning">The username you have input <strong>already exists</strong>.</p>
+            {% endif %}
+
+
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+        </form>
+    </div>
+{% endblock %}
