@@ -7,6 +7,10 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+  overflow-x: hidden; /* Empêcher le défilement horizontal */
+}
+
 .main {
   position: relative;
   min-height: 100vh;
@@ -14,19 +18,20 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px 100px;
+  padding: 100px 20px; /* Ajuster l'espacement autour du contenu */
 }
 
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 100px;
+  padding: 30px 20px; /* Ajuster l'espacement autour du contenu */
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajouter un fond semi-transparent */
 }
 
 .logo {
@@ -56,6 +61,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 40px; /* Ajouter une marge en haut pour éviter le chevauchement avec l'en-tête */
 }
 
 .content .text {
