@@ -46,11 +46,11 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-  }
+}
 .logo {
     max-width: 110px;
     border-radius: 28px;
-  }
+}
 
 h1 {
     font-weight: 700px;
@@ -184,7 +184,7 @@ button:hover {
     opacity: 1;
 }
   
-button:active. {
+button:active {
     top: 4px;
     box-shadow: #c0392b 0px 3px 2px,#000 0px 3px 5px;
 }

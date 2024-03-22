@@ -4,6 +4,7 @@ body, header {
 }
 
 
+
 .logo {
     max-width: 110px;
     border-radius: 28px;
@@ -22,13 +23,12 @@ body {
 }
 
 .logo img {
-    margin-left: 50%;
     border-radius: 28px;
-    max-width: 100px;
+    max-width: 110px;
 }
 
 
-ul li {
+li {
     display: inline;
     margin-right: 30px; /* Réduit l'espacement entre les éléments de navigation */
 }
@@ -38,29 +38,9 @@ li:last-child {
 }
 
 
-.edit {
-    --bg: #0043ec;
-    --text-color: #ffffff;
-    position: relative;
-    width: 150px;
-    border: none;
-    background: var(--bg);
-    color: var(--text-color);
-    padding: 1em;
-    font-weight: bold;
-    font-size: 10px;
-    text-transform: uppercase;
-    transition: 0.2s;
-    border-radius: 5px;
-    opacity: 0.8;
-    letter-spacing: 1px;
-    box-shadow: #2a364f 0px 7px 2px, #363636 0px 8px 5px;
-    margin-top: 20px;
-    margin-left: 5%;
-}
 
 .déconnecter {
-    margin-left: 10%;
+    margin-left: 78%;
     margin-top: 10px ;
     --bg: #000000;
     --text-color: #fff;
@@ -118,6 +98,7 @@ li:last-child {
     opacity: 0.8;
     letter-spacing: 1px;
     box-shadow: #b6b6b6 0px 7px 2px, #909090 0px 8px 5px;
+    margin-left: 25%;
 }
   
 button:hover {
@@ -129,48 +110,82 @@ button:active {
     box-shadow: #434343 0px 3px 2px,#000000 0px 3px 5px;
 }
 
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ajustez la largeur maximale selon vos besoins */
+    margin: 0 auto; /* Centrer horizontalement */
+    padding: 0 20px; /* Ajoutez un peu de marge sur les côtés */
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
 .profile-info {
     color: #ffffff;
-    display: table-cell;
-    vertical-align: middle; /* Aligne les éléments verticalement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
     
+}
+
+.profile-details label {
+    margin-bottom: 5px;
 }
 
 .profile-details {
     color: #ffffff;
     margin-left: 20px;
     margin-bottom: 10px;
+    width: 100%;
 }
 
-.profile-details h4 {
-    font-size: 22px; /* Taille du texte pour le nom d'utilisateur */
+.profile-details input,
+.profile-details textarea {
+    width: 100%; /* Ajustez la largeur des champs de saisie */
+    padding: 10px; /* Ajoutez de la marge interne pour un meilleur aspect */
+    margin-bottom: 15px; /* Espacement entre chaque champ de saisie */
+    border-radius: 5px; /* Pour arrondir les coins des champs de saisie */
+    border: 1px solid #ccc; /* Ajoutez une bordure pour une meilleure distinction */
+    box-sizing: border-box; /* Pour inclure la bordure dans la largeur et la hauteur */
 }
 
-.profile-details p.text-description {
-    font-size: 16px; /* Taille du texte pour la description */
-}
-
-.profile-details p.text-sport {
-    font-size: 17px; /* Taille du texte pour le sport */
-}
-
-.profile-details p.text-contact {
-    font-size: 13px; /* Taille du texte pour le contact */
+.profile-picture img {
+    width: 150px; /* Ajustez la taille de l'image de profil selon vos besoins */
+    height: 150px;
+    border-radius: 50%; /* Pour obtenir une forme circulaire */
+    margin-bottom: 20px; /* Espacement entre l'image de profil et les autres éléments */
+    margin-top: 15px;
 }
 
 
-.profile-details > *:not(:last-child) {
-    border-bottom: 1px solid #ffffffd5; /* Ajoute une bordure en tiret entre chaque élément */
-    padding-bottom: 10px; /* Ajoute un padding entre chaque élément */
+
+.profile-details label {
+    display: block; /* Afficher chaque label sur une nouvelle ligne */
+    margin-bottom: 5px; /* Espacement entre chaque label */
+}
+
+.card {
+    width: 100%;
+    max-width: 600px; /* Ajustez la largeur maximale de la carte selon vos besoins */
+    margin: 20px auto; /* Centrer la carte horizontalement */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre pour la profondeur */
 }
 
 .card-body {
-    background-color:#000000ba; /* Pour rendre le fond transparent */
-    border: none !important; /* Ajoutez votre style de bordure souhaité ici */
+    background-color:#000000b4; /* Pour rendre le fond transparent */
+    border: none;
     border-radius: 20px;
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
+    flex-direction: column;
+    align-items: center;
 }
 
 
