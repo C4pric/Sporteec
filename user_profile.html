@@ -1,5 +1,5 @@
 <html>
-    <head lang="en">
+    <head lang="fr">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sporteec | user Profile</title>
@@ -12,22 +12,16 @@
   <body>
     <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="home_page.html"><img src="logo.png" class="logo"></a>
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <a href="/cheet-sheet-market" class="nav-link px-2 link-dark">Cheat-Sheet Market</a>
-                <a href="/" class="nav-link px-2 link-dark">Home</a>
+                <a href="page-principale.html" class="nav-link px-2 link-dark">Home</a>
                 {% if not logged_in %}
                     <a href="/login">
-                        <button class="btn btn-outline-primary me-2">Login</button>
-                    </a>
-                    <a href="/sign-up">
-                        <button class="btn btn-primary">Sign-up</button>
+                        <button href="inscription_connection.html" class="btn btn-outline-primary me-2">Login</button>
                     </a>
                 {% else %}
                     <a href="/sign-out">
-                        <button class="btn btn-outline-primary me-2">Sign-out</button>
-                    </a>
-                    <a href="/profile">
-                        <button class="btn btn-secondary me-2">Profile</button>
+                        <button href="home_page.html"class="btn btn-outline-primary me-2">Sign-out</button>
                     </a>
                 {% endif %}
             </ul>
@@ -51,27 +45,6 @@
                             <h4>{{username}}</h4>
                             <p class="text-secondary">{{description}}</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex flex-column align-items-center text-center">
-                        <h4>{{"My public cheat-sheets" if is_user else "Their public cheat-sheets"}}</h4>
-                        {% if cheat_sheet == [] %}
-                            <small class="text-muted">No personally made cheat sheet yet...</small>
-                        {% else %}
-                            {% for c in cheat_sheet %}
-                                <div class="card">
-                                    <img class="card-img-top" src="...", alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{c["title"]}}</h5>
-                                        <p class="card-text">{{c["context"]}}</p>
-                                        <a href={{"/cheat-sheet" ~ c["token"]}} class="btn btn-primary">Display</a>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        {% endif %}
                     </div>
                 </div>
             </div>
