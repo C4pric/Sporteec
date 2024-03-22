@@ -28,12 +28,12 @@
             <img src="css/img/sport1.avif" alt="sport1">
         </div>
         <header>
-            <a href="index.html"><img src="css/img/logo.png" class="logo"></a>
+            <a href="index.html"><img src="css/img/logo.png" alt="logo" class="logo"></a>
             <div class="toggle"></div>
             <ul class="navigation">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Menu</a></li>
-                <li><a href="inscription_connection.html">Connection ⬈</a></li>
+                <li><a href="inscription_connection.html">Connexion ⬈</a></li> <!-- Corrected "Connection" to "Connexion" -->
             </ul>
         </header>
         <div class="content">     
@@ -70,45 +70,45 @@
 
         let i = 0;
         
-        function ActiveSlide(n){
-            for(slide of slides)
+        function activeSlide(n){
+            for(const slide of slides)
                 slide.classList.remove('active');
             slides[n].classList.add('active');
         }
 
         // function for next btn
         next.addEventListener('click', function(){
-            if(i == slides.length - 1){
+            if(i === slides.length - 1){
                 i = 0;
-                ActiveSlide(i);
+                activeSlide(i);
             }
             else {
                 i++;
-                ActiveSlide(i);
+                activeSlide(i);
             }
         })
 
         // function for prev btn
         prev.addEventListener('click', function(){
-            if(i == 0){
+            if(i === 0){
                 i = slides.length - 1;
-                ActiveSlide(i);
+                activeSlide(i);
             }
             else {
                 i--;
-                ActiveSlide(i);
+                activeSlide(i);
             }
         })
 
         // Change les diapositives toutes les 5 secondes
         setInterval(function() {
-            if(i == slides.length - 1){
+            if(i === slides.length - 1){
                 i = 0;
-                ActiveSlide(i);
+                activeSlide(i);
             }
             else {
                 i++;
-                ActiveSlide(i);
+                activeSlide(i);
             }
         }, 5000);
     </script>
