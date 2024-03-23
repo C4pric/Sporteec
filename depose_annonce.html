@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporteec | Création d'annonce</title>
+    <link rel="stylesheet" href="depose_annonce.css">
+    <link rel="icon" type="image/png" href="css/img/logo.png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <li>
+                {% if logged_in %}
+                    <a href="page-principale.html"><img src="css/img/logo.png" class="logo"></a>
+                    <a href="user_profile.html"><button class="déconnecter">Profil</button></a>
+                {% else %}
+                    <a href="home_page.html"><img src="css/img/logo.png" class="logo"></a>
+                {% endif %}
+            </li>
+        </div>
+    </header>
+
+    <div class="container">
+        {% if logged_in %}
+            <div class="card mb-2">
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="profile-info">
+                            <div class="profile-picture">
+                                <img src={{profile_picture}} class="rounded-circle" alt="profile icon">
+                            <div class="form-group1">
+                                <label for="title-input">Titre de l'annonce</label>
+                                <input class="form-control4" type="text" id="title-input" name="title" autocomplete="off">
+                            </div>
+                            <div class="form-group2">
+                                <label for="comment-input">Description de l'annonce</label>
+                                <textarea class="form-control3" id="context-input" name="description" autocomplete="off"></textarea>
+                            </div>
+                            <div class="form-group3">
+                                <label for="comment-input">Lieu de rendez-vous</label>
+                                <textarea class="form-control2" id="context-input" name="location" autocomplete="off"></textarea>
+                            </div>
+                            <div class="form-group1">
+                                <label for="sport-select">Choix du sport</label>
+                                <select class="form-control" name="sport" id="sport-select">
+                                    <option value="">⬇ -- Veuillez choisir une option -- ⬇</option>
+                                    <option value="badminton">Badminton 🏸 </option>
+                                    <option value="basket">Basket 🏀 </option>
+                                    <option value="boxe">Boxe 🥊 </option>
+                                    <option value="foot">Foot ⚽ </option>
+                                    <option value="golf">Golf ⛳ </option>
+                                    <option value="tennis">Tennis 🎾 </option>
+                                    <option value="vélo">Vélo 🚴 </option>
+                                    <option value="volley">Volley 🏐 </option>
+                                </select>
+                            </div>
+                            <div class="form-group2">
+                                <label for="comment-input">Niveau dans le sport</label>
+                                <input class="form-control1" type="text" placeholder="exemples: Débutant\NC\Classement\Pro\...">
+                            </div>
+                            </div>
+                                <button class="sauvegarder" value="Upload" type="submit">Déposer l'annonce</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        {% else %}
+            <div class="not-logged-in">
+                <h1>Vous n'êtes pas connecté.</h1>
+                <h2>Connectez-vous ou inscrivez-vous pour accéder à cette page.</h2>
+                <a href="inscription_connection.html"><button class="connecter">Se connecter</button></a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

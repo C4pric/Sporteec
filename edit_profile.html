@@ -23,6 +23,7 @@
     </header>
 
     <div class="container">
+        {% if logged_in %}
             <div class="card mb-2">
                 <div class="card-body">
                     <form action="/update-profile" method="post">

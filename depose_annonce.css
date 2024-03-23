@@ -38,27 +38,6 @@ li:last-child {
 }
 
 
-.edit {
-    --bg: #0043ec;
-    --text-color: #ffffff;
-    position: relative;
-    width: 150px;
-    border: none;
-    background: var(--bg);
-    color: var(--text-color);
-    padding: 1em;
-    font-weight: bold;
-    font-size: 10px;
-    text-transform: uppercase;
-    transition: 0.2s;
-    border-radius: 5px;
-    opacity: 0.8;
-    letter-spacing: 1px;
-    box-shadow: #2a364f 0px 7px 2px, #363636 0px 8px 5px;
-    margin-top: 20px;
-    margin-left: 5%;
-}
-
 .déconnecter {
     margin-left: 78%;
     margin-top: 10px ;
@@ -118,7 +97,48 @@ li:last-child {
     opacity: 0.8;
     letter-spacing: 1px;
     box-shadow: #b6b6b6 0px 7px 2px, #909090 0px 8px 5px;
+    margin-left: 25%;
+    margin-bottom: 30px ;
 }
+  
+.profile-picture img {
+    width: 150px; /* Ajustez la taille de l'image de profil selon vos besoins */
+    height: 150px;
+    border-radius: 50%; /* Pour obtenir une forme circulaire */
+    margin-bottom: 20px; /* Espacement entre l'image de profil et les autres éléments */
+    margin-top: 15px;
+    margin-left: 35%;
+}
+
+.form-control1{
+    width: 61%;
+}
+.form-control2{
+    width: 60%;
+}
+.form-control3{
+    width: 55%;
+}
+.form-control4{
+    width: 54%;
+}
+/* Style pour le bouton de sélection */
+form select {
+    width: 64%; /* Définissez la largeur du bouton de sélection */
+    padding: 10px; /* Ajoutez un remplissage pour un aspect agréable */
+    font-size: 16px; /* Taille de police */
+    border-radius: 5px; /* Ajoutez des coins arrondis */
+    border: 1px solid #ccc; /* Ajoutez une bordure */
+    background-color: #fff; /* Couleur de fond */
+    appearance: none; /* Réinitialisez l'apparence native du bouton */
+    cursor: pointer; /* Curseur au survol */
+}
+
+/* Style pour l'option par défaut */
+form select option:first-child {
+    color: #999; /* Couleur du texte pour l'option par défaut */
+}
+
   
 button:hover {
     opacity: 1;
@@ -136,43 +156,48 @@ button:active {
     
 }
 
-.profile-details {
-    color: #ffffff;
-    margin-left: 20px;
-    margin-bottom: 10px;
+form select option {
+    text-align: center; /* Centrer le texte à l'intérieur de l'option */
 }
 
-.profile-details h4 {
+.form-group1 {
     font-size: 22px; /* Taille du texte pour le nom d'utilisateur */
+    margin-bottom: 15px;
 }
 
-.profile-details p.text-description {
+.form-group2 {
     font-size: 16px; /* Taille du texte pour la description */
+    margin-bottom: 15px;
 }
 
-.profile-details p.text-sport {
+.form-group3 {
     font-size: 17px; /* Taille du texte pour le sport */
+    margin-bottom: 15px;
 }
 
-.profile-details p.text-contact {
-    font-size: 13px; /* Taille du texte pour le contact */
-}
 
 
 .profile-details > *:not(:last-child) {
     border-bottom: 1px solid #ffffffd5; /* Ajoute une bordure en tiret entre chaque élément */
     padding-bottom: 10px; /* Ajoute un padding entre chaque élément */
 }
-
-.card-body {
-    background-color:#000000ba; /* Pour rendre le fond transparent */
-    border: none !important; /* Ajoutez votre style de bordure souhaité ici */
-    border-radius: 20px;
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
+.card {
+    width: 100%;
+    max-width: 700px; /* Ajustez la largeur maximale de la carte selon vos besoins */
+    margin: 20px auto; /* Centrer la carte horizontalement */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre pour la profondeur */
 }
 
+.card-body {
+    background-color:#000000b4; /* Pour rendre le fond transparent */
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .not-logged-in {
     text-align: center;
@@ -198,3 +223,6 @@ button:active {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+
+
+
