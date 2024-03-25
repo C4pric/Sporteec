@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporteec | Login Page</title>
+
+    <link rel="stylesheet" href="static/css_/inscription_connection.css">
+    <link rel="icon" type="image/png" href="static/logo.png">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="static/logo.png" class="logo"></a>
+    </header>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="/register" method="POST">
+                <h1>Créer un compte</h1>
+                <input type="text" name="nom" placeholder="Nom" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="password" name="mot_de_passe" id="passwordInputSignup" placeholder="Mot de passe" />
+                <btn type="button" id="togglePasswordSignup" class="eye-button"><img src="static/eye_v.png" id="eyeIconSignup" alt="Toggle Password Visibility"></btn>
+                <div class="radios">
+                    <input type="radio" id="radio1" name="sexe" value="homme" checked>
+                    <label for="radio1">Homme</label>
+                    <input type="radio" id="radio2" name="sexe" value="femme">
+                    <label for="radio2">Femme</label>
+                    <input type="radio" id="radio3" name="sexe" value="autre">
+                    <label for="radio3">Autre</label>
+                </div>
+                <button class="sign-up-button" type="submit">S'inscrire</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="/connexion" method="POST">
+                <h1>Se connecter</h1>
+                <input type="email" name="email" placeholder="Email" />
+                <input type="password" name="mot_de_passe" id="passwordInputLogin" placeholder="Mot de passe" />
+                <btn type="button" id="togglePasswordLogin" class="eye-button"><img src="static/eye_nv.png" id="eyeIconLogin" alt="Toggle Password Visibility"></btn>
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>De retour parmis nous!</h1>
+                    <p>Pour rester en contact avec nous, veuillez vous connecter avec vos informations personnelles</p>
+                    <button class="ghost" id="signIn">Se connecter</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Un nouveau partenaire!</h1>
+                    <p>Entrez vos informations personnelles et commencez vos recherches de partenaires sportifs</p>
+                    <button class="ghost" id="signUp">S'inscrire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/Javascript_/inscription_connection.js"></script>
+</body>
+</html>
