@@ -43,19 +43,7 @@
     </section>
     
     <script>
-        //toggle 
-        const menutoggle = document.querySelector('.toggle');
-        const navigation = document.querySelector('.navigation');
-        menutoggle.onclick = function(){
-            menutoggle.classList.toggle('active')
-            navigation.classList.toggle('active')
-        }
-
-        //slider
         const slides = document.querySelectorAll('.slides');
-        const prev = document.querySelector('.prev');
-        const next = document.querySelector('.next');
-
         let i = 0;
         
         function activeSlide(n){
@@ -64,41 +52,19 @@
             slides[n].classList.add('active');
         }
 
-        // function for next btn
-        next.addEventListener('click', function(){
-            if(i === slides.length - 1){
-                i = 0;
-                activeSlide(i);
-            }
-            else {
-                i++;
-                activeSlide(i);
-            }
-        })
+        // Initialiser la variable i pour afficher la première image au chargement de la page
+        activeSlide(i);
 
-        // function for prev btn
-        prev.addEventListener('click', function(){
-            if(i === 0){
-                i = slides.length - 1;
-                activeSlide(i);
-            }
-            else {
-                i--;
-                activeSlide(i);
-            }
-        })
-
-        // Change les diapositives toutes les 5 secondes
+        // Fonction pour changer de diapositive toutes les 8 secondes
         setInterval(function() {
-            if(i === slides.length - 1){
+            if (i === slides.length - 1) {
                 i = 0;
                 activeSlide(i);
-            }
-            else {
+            } else {
                 i++;
                 activeSlide(i);
             }
-        }, 5000);
+        }, 8000);
     </script>
 </body>
 </html>
