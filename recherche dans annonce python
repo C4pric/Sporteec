@@ -1,0 +1,56 @@
+import sqlite3
+import random
+import string
+import math
+
+# Créer une connexion à la base de données SQLite
+conn = sqlite3.connect('annonces.db')
+
+# Créer un curseur pour exécuter des commandes SQL
+c = conn.cursor()
+
+
+# Créer une table pour stocker les comptes d'utilisateurs
+c.execute('''
+    CREATE TABLE IF NOT EXISTS annonces (
+        id INTEGER PRIMARY KEY,
+        titre TEXT NOT NULL,
+        latitude REAL NOT NULL,
+        longitude REAL NOT NULL,
+        niveau INTEGER NOT NULL,
+        texte TEXT NOT NULL
+    )
+''')
+
+# Fonction pour rechercher des annonces par mot clé
+def rechercher_annonces(mot_cle):
+    c.execute("SELECT * FROM annonces WHERE texte LIKE ?", ('%' + mot_cle + '%',))
+    return c.fetchall()
+
+question = input ("voulez vous afficher une annonce ? (y/n)")
+if question == "y" :
+    titre = input("veuillez saisir le titre de votre annonce")
+    texte = input("veuillez saisir le texte présent dans votre photo")
+    id = random.randint(1, 1000)  # sera remplacer dans le futur par les vrai id utilisateur, ici le code est a titre vierge
+    latitude = random.randint(1, 1000)  # sera remplacer dans le futur par les vrai coordonnées en les récupérant sur google map
+    longitude = random.randint(1, 1000)
+    niveau = input("quel est votre niveau")
+    # Ajouter l'utilisateur à la table
+    c.execute('''
+        INSERT INTO annonces (id, titre, latitude, longitude, niveau, texte) VALUES (?, ?, ?, ?, ?, ?)
+    ''', (id, titre , latitude, longitude, niveau, texte ))
+    # Valider les modifications
+    conn.commit()
+
+
+# Demander à l'utilisateur de saisir un mot clé
+    mot_cle = input("Entrez le mot clé à rechercher : ")
+
+# Rechercher les annonces contenant le mot clé
+annonces = rechercher_annonces(mot_cle)
+
+# Afficher les annonces trouvées
+for annonce in annonces:
+        print(annonce)
+except Exception as e:
+    print("Une erreur s'est produite :", e)
