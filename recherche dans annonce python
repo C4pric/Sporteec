@@ -3,6 +3,30 @@ import random
 import string
 import math
 
+# Liste de mots prédéfinie
+mots = [
+    "bonjour", "salut", "coucou", "hello",
+    "comment", "quoi", "pourquoi", "où", "quand", "qui", "quoi", "comment",
+    "ça", "va", "bien", "mal", "moyen", "correct", "pas mal",
+    "aujourd'hui", "hier", "demain", "ce soir", "ce matin", "cet après-midi",
+    "il", "elle", "ils", "elles", "je", "tu", "nous", "vous", "on",
+    "fait", "pleut", "neige", "soleil", "chaud", "froid", "vent", "pluie",
+    "j'aime", "j'adore", "je déteste", "je n'aime pas", "j'aime bien",
+    "le", "la", "les", "du", "de la", "des",
+    "python", "java", "javascript", "c++", "ruby", "php", "swift", "kotlin",
+    "et", "ou", "mais", "donc", "car", "alors", "ainsi", "parce que",
+    "film", "musique", "livre", "jeu", "série", "émission", "vidéo", "photo",
+    "travail", "école", "université", "fac", "boulot", "stage", "entreprise",
+    "sport", "foot", "tennis", "basket", "natation", "course", "vélo", "fitness"
+]
+
+# Fonction pour générer une phrase aléatoire
+def generer_phrase():
+    nombre_mots = random.randint(5, 15)
+    phrase = " ".join(random.choice(mots) for _ in range(nombre_mots))
+    return phrase.capitalize() + "."
+
+
 # Créer une connexion à la base de données SQLite
 conn = sqlite3.connect('annonces.db')
 
@@ -24,17 +48,25 @@ c.execute('''
 
 # Fonction pour rechercher des annonces par mot clé
 def rechercher_annonces(mot_cle):
-    c.execute("SELECT * FROM annonces WHERE texte LIKE ?", ('%' + mot_cle + '%',))
+    c.execute("SELECT * FROM annonces WHERE titre LIKE ? OR texte LIKE ?", ('%' + mot_cle + '%', '%' + mot_cle + '%'))
     return c.fetchall()
+
 
 question = input ("voulez vous afficher une annonce ? (y/n)")
 if question == "y" :
-    titre = input("veuillez saisir le titre de votre annonce")
-    texte = input("veuillez saisir le texte présent dans votre photo")
-    id = random.randint(1, 1000)  # sera remplacer dans le futur par les vrai id utilisateur, ici le code est a titre vierge
-    latitude = random.randint(1, 1000)  # sera remplacer dans le futur par les vrai coordonnées en les récupérant sur google map
-    longitude = random.randint(1, 1000)
-    niveau = input("quel est votre niveau")
+    # Récupérer l'identifiant maximal de la table annonces
+    c.execute("SELECT MAX(id) FROM annonces")
+    result = c.fetchone()
+    max_id = result[0] if result[0] is not None else 0
+   # Ajouter 10 annonces avec du texte aléatoire
+    for i in range(100):
+        titre = generer_phrase()
+        texte = generer_phrase()
+        id = max_id + i + 1
+        latitude = random.uniform(48.85, 48.86)
+        longitude = random.uniform(2.34, 2.35)
+        niveau = random.randint(1, 5)
+
     # Ajouter l'utilisateur à la table
     c.execute('''
         INSERT INTO annonces (id, titre, latitude, longitude, niveau, texte) VALUES (?, ?, ?, ?, ?, ?)
@@ -52,5 +84,3 @@ annonces = rechercher_annonces(mot_cle)
 # Afficher les annonces trouvées
 for annonce in annonces:
         print(annonce)
-except Exception as e:
-    print("Une erreur s'est produite :", e)
