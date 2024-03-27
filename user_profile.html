@@ -11,19 +11,15 @@
     <header>
         <div class="container">
             <li>
-                {% if logged_in %}
                     <a href="page-principale.html"><img src="css/img/logo.png" class="logo"></a>
                     <a href="index.html"><button class="déconnecter">Se déconnecter</button></a>
-                {% else %}
                     <a href="index.html"><img src="css/img/logo.png" class="logo"></a>
-                    
-                {% endif %}
             </li>
         </div>
     </header>
 
     <div class="container">
-        {% if logged_in %}
+
             <div class="card mb-2">
                 <div class="card-body">
                     <div class="profile-info">
@@ -36,10 +32,7 @@
                             <img src={{profile_picture}} class="rounded-circle" alt="profile icon">
                         {% endif %}
                         <div class="profile-details">
-                            <h4 class="note">{{note}}</h4>
-                            <h4>{{Prénom}}</h4>
                             <h4>{{Nom}}</h4>
-                            <p class="text-sport">{{user_data_sport}}</p>
                             <p class="text-description">{{user_data_description}}</p>
                             <p class="text-contact">{{user_data_contact}}</p>
                         </div>
@@ -47,13 +40,11 @@
                 </div>
             </div>
                 <a href="edit_profile.html"><button class="edit">Modifier le profil</button></a>
-        {% else %}
             <div class="not-logged-in">
-                <h1>Vous n'êtes pas connecter.</h1>
-                <h2>Connecter ou inscriver vous pour accèder a cette page.</h2>
+                <h1>Vous n'êtes pas connecté.</h1>
+                <h2>Connectez ou inscrivez vous pour accéder à cette page.</h2>
                 <a href="inscription_connection.html"><button class="connecter">Se connecter</button></a>
             </div>
-        {% endif %}
     </div>
 </body>
 </html>

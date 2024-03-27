@@ -71,10 +71,9 @@ def connexion():
 # Route pour la page réussie
 @app.route('/reussi')
 def reussi():
-    return render_template('reussi.html')
+    return redirect('https://pornhub.com')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

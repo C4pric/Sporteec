@@ -11,19 +11,13 @@
     <header>
         <div class="cont">
             <li>
-                {% if logged_in %}
                     <a href="page-principale.html"><img src="css/img/logo.png" class="logo"></a>
                     <a href="user_profile.html"><button class="déconnecter">profil</button></a>
-                {% else %}
-                    <a href="index.html"><img src="css/img/logo.png" class="logo"></a>
-                    
-                {% endif %}
             </li>
         </div>
     </header>
 
     <div class="container">
-        {% if logged_in %}
             <div class="card mb-2">
                 <div class="card-body">
                     <form action="/update-profile" method="post">
@@ -40,16 +34,12 @@
                                 <input type="file" id="profile_picture" name="profile_picture">
                             </div>
                             <div class="profile-details">
-                                <label for="username">Prénom:</label>
-                                <input type="text" id="username" name="username" value="{{Prénom}}">
 
                                 <label for="username">Nom:</label>
                                 <input type="text" id="username" name="username" value="{{Nom}}">
                                 
-                                <label for="sport">Sport:</label>
-                                <input type="text" id="sport" name="sport" value="{{sport}}">
                                 
-                                <label for="description">Description:</label>
+                                <label for="description">Description:(spécifiez vos sports)</label>
                                 <textarea id="description" name="description">{{description}}</textarea>
                                 
                                 <label for="contact">Contact:</label>
@@ -61,13 +51,7 @@
                     </div>
                 </div>
             </div>
-        {% else %}
-            <div class="not-logged-in">
-                <h1>Vous n'êtes pas connecter.</h1>
-                <h2>Connecter ou inscriver vous pour accèder a cette page.</h2>
-                <a href="inscription_connection.html"><button class="connecter">Se connecter</button></a>
-            </div>
-        {% endif %}
+           
     </div>
 </body>
 </html>
