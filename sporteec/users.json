@@ -1,0 +1,26 @@
+[
+    {
+        "nom": "Mohamed",
+        "email": "kilimsong@gmail.com",
+        "mot_de_passe": "leblanc",
+        "sexe": "femme"
+    },
+    {
+        "nom": "Phillipe",
+        "email": "etchenchenbest@gmail.com",
+        "mot_de_passe": "jvaistesautercommeundindon",
+        "sexe": "autre"
+    },
+    {
+        "nom": "oniichan",
+        "email": "kawaine@gmail.com",
+        "mot_de_passe": "manga",
+        "sexe": "homme"
+    },
+    {
+        "nom": "Vincent ",
+        "email": "capric.sun.pandac@gmail.com",
+        "mot_de_passe": "123",
+        "sexe": "homme"
+    }
+]

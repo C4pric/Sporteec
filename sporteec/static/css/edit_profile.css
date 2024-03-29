@@ -1,0 +1,215 @@
+body, header {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.logo {
+    max-width: 110px;
+    border-radius: 28px;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+body {
+    background: linear-gradient(to right, #dc0073, #1ff6fd) no-repeat 0 0 / cover;
+    min-height: 100vh; /* Hauteur minimale égale à 100% de la hauteur de la fenêtre */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Couleur de fond de votre choix */
+    background-size: cover; /* Ajuste la taille de l'image de fond pour couvrir tout le corps */
+    background-position: center; /* Centre l'image de fond */
+}
+
+.logo img {
+    border-radius: 28px;
+    max-width: 110px;
+}
+
+
+li {
+    display: inline;
+    margin-right: 30px; /* Réduit l'espacement entre les éléments de navigation */
+}
+
+li:last-child {
+    margin-right: 0;
+}
+
+
+
+.déconnecter {
+    margin-right: 78%;
+    margin-top: 10px ;
+    --bg: #000000;
+    --text-color: #fff;
+    position: relative;
+    width: 190px;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 1em;
+    font-weight: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 10px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #545454 0px 7px 2px, #363636 0px 8px 5px;
+}
+
+.connecter {
+    margin-top: 10px ;
+    --bg: #000000;
+    --text-color: #fff;
+    position: relative;
+    width: 190px;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 1em;
+    font-weight: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 10px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #545454 0px 7px 2px, #363636 0px 8px 5px;
+}
+
+.sauvegarder {
+    margin-top: 10px ;
+    --bg: #ffffff;
+    --text-color: #000000;
+    position: relative;
+    width: 190px;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 1em;
+    font-weight: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 10px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #b6b6b6 0px 7px 2px, #909090 0px 8px 5px;
+    margin-left: 25%;
+}
+  
+button:hover {
+    opacity: 1;
+}
+  
+button:active {
+    top: 4px;
+    box-shadow: #434343 0px 3px 2px,#000000 0px 3px 5px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ajustez la largeur maximale selon vos besoins */
+    margin: 0 auto; /* Centrer horizontalement */
+    padding: 0 20px; /* Ajoutez un peu de marge sur les côtés */
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.profile-info {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+.profile-details label {
+    margin-bottom: 5px;
+}
+
+.profile-details {
+    color: #ffffff;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.profile-details input,
+.profile-details textarea {
+    width: 100%; /* Ajustez la largeur des champs de saisie */
+    padding: 10px; /* Ajoutez de la marge interne pour un meilleur aspect */
+    margin-bottom: 15px; /* Espacement entre chaque champ de saisie */
+    border-radius: 5px; /* Pour arrondir les coins des champs de saisie */
+    border: 1px solid #ccc; /* Ajoutez une bordure pour une meilleure distinction */
+    box-sizing: border-box; /* Pour inclure la bordure dans la largeur et la hauteur */
+}
+
+.profile-picture img {
+    width: 150px; /* Ajustez la taille de l'image de profil selon vos besoins */
+    height: 150px;
+    border-radius: 50%; /* Pour obtenir une forme circulaire */
+    margin-bottom: 20px; /* Espacement entre l'image de profil et les autres éléments */
+    margin-top: 15px;
+}
+
+
+
+.profile-details label {
+    display: block; /* Afficher chaque label sur une nouvelle ligne */
+    margin-bottom: 5px; /* Espacement entre chaque label */
+}
+
+.card {
+    width: 100%;
+    max-width: 600px; /* Ajustez la largeur maximale de la carte selon vos besoins */
+    margin: 20px auto; /* Centrer la carte horizontalement */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre pour la profondeur */
+}
+
+.card-body {
+    background-color:#000000b4; /* Pour rendre le fond transparent */
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.not-logged-in {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Barre de défilement */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Couleur de la piste de défilement */
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+/* Couleur du curseur de défilement */
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+/* Au survol de la barre de défilement */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
