@@ -1,30 +1,83 @@
-# Troph-e-NSI
+Bien sûr, voici une version plus détaillée du README pour votre site Sporteec :
 
+Sporteec - Trouvez des partenaires pour pratiquer vos sports favoris
+==================================================================
 
+Sporteec est une WebApp qui permet aux utilisateurs de trouver des partenaires pour pratiquer leurs sports favoris. Notre site utilise un système de coefficient pour trouver les partenaires les plus adaptés à vos critères de recherche.
 
-Architecture : 
-- page d'arrivé : cette page a pour but de présenter légerement le site et et redirige ensuite vers la création / connection d'utilisateurs
+Fonctionnalités
+---------------
 
-- page de connection et création : pemet de s'inscire en nouvelle utilisateurs dans la base sql ou de récuperer son utilisateur dans cette meme base
+### Page d'accueil
 
-- page de création d'annonces : l'utilisateurs précise son annonce avec différent critère tel que la date l'horaire, le sport pratiqué aisni que son niveau dans celui çi. la localisation est récuperer et préciser par google map
+La page d'accueil présente brièvement le site et redirige les utilisateurs vers la page de connexion/création de compte.
 
-- page de recherche : l'utilisateurs peut chercher différentes annonces en précisant les critères voulut; l'algorithme renvoie les annonces idéal grace a un système de coéficient, il ne renvera que des annonces du sport voulut puis se concentre sur la distance en priorité puis le niveau
+### Page de connexion/création de compte
 
-- page utilisateurs : chaque utilisateur a sa propre page lui permettant de modifié ces donnés personnelles tel que son mail, nom, mot de passe, etc...
+Les utilisateurs peuvent créer un nouveau compte en fournissant leur nom, leur adresse e-mail et leur mot de passe. Les utilisateurs existants peuvent se connecter en utilisant leur adresse e-mail et leur mot de passe.
 
--page de chat :  un système de chat est potentiellement envisagée entre 2 utilisateurs 
+### Page de création d'annonces
 
-# Trophée NS
+Les utilisateurs peuvent créer des annonces pour trouver des partenaires en précisant le sport, la date, l'heure, le niveau et la localisation. La localisation est récupérée et précisée à l'aide de Google Maps.
 
-Sporteec est une WebApp permettant de trouver des partenaires pour pratiquer vos sports favoris. Il suffit simplement de vous inscrire, sélectionner votre/vos sport(s) puis votre niveau dans ce sport et notre site vous trouvera automatiquement un ou plusieurs partenaires adaptés à vos critères.
+### Page de recherche
 
+Les utilisateurs peuvent rechercher des annonces en fonction de différents critères tels que le sport, la date, l'heure, le niveau et la localisation. Notre algorithme utilise un système de coefficient pour trouver les annonces les plus adaptées aux critères de recherche de l'utilisateur.
 
-# participant
+### Page utilisateur
 
-Romain Perez
-Raphaël Vincent 
-Clement Diot
-Julien Farran
+Chaque utilisateur dispose d'une page personnelle où il peut modifier ses informations personnelles telles que son nom, son adresse e-mail et son mot de passe.
 
+### Page de chat
 
+Un système de chat est disponible entre les utilisateurs pour faciliter la communication et la planification des sessions sportives.
+
+Trophée NS
+----------
+
+Sporteec a remporté le trophée NS, une compétition récompensant les meilleurs projets étudiants dans le domaine du sport.
+
+Participants
+------------
+
+* Romain Perez
+* Raphaël Vincent
+* Clément Diot
+* Julien Farran
+
+Technologies utilisées
+----------------------
+
+* HTML/CSS/JavaScript pour le développement front-end
+* Python/Flask pour le développement back-end
+* SQLite pour la base de données
+* Google Maps API pour la localisation
+
+Installation
+------------
+
+1. Cloner le dépôt Git : `git clone https://github.com/votre-nom-utilisateur/votre-repo.git`
+2. Installer les dépendances Python : `pip install -r requirements.txt`
+3. Lancer l'application Flask : `python app.py`
+4. Ouvrir un navigateur web et accéder à l'adresse `http://localhost:5000`
+
+Contribution
+------------
+
+Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes :
+
+1. Forker le dépôt Git
+2. Créer une nouvelle branche pour votre fonctionnalité/correctif : `git checkout -b ma-nouvelle-branche`
+3. Commiter vos modifications : `git commit -am 'Ajout de ma nouvelle fonctionnalité'`
+4. Pousser vos modifications sur votre branche : `git push origin ma-nouvelle-branche`
+5. Ouvrir une pull request sur le dépôt original
+
+Licence
+-------
+
+Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
+
+Contact
+-------
+
+Pour toute question ou demande de renseignements, veuillez nous contacter à l'adresse suivante : [contact@sporteec.com](mailto:contact@sporteec.com).
