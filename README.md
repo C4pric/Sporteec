@@ -3,85 +3,28 @@
 
 
 Architecture : 
+- page d'arrivé : cette page a pour but de présenter légerement le site et et redirige ensuite vers la création / connection d'utilisateurs
 
-- base de donnes SQL
+- page de connection et création : pemet de s'inscire en nouvelle utilisateurs dans la base sql ou de récuperer son utilisateur dans cette meme base
 
-    - liste de comptes
+- page de création d'annonces : l'utilisateurs précise son annonce avec différent critère tel que la date l'horaire, le sport pratiqué aisni que son niveau dans celui çi. la localisation est récuperer et préciser par google map
 
-    - liste de demande
+- page de recherche : l'utilisateurs peut chercher différentes annonces en précisant les critères voulut; l'algorithme renvoie les annonces idéal grace a un système de coéficient, il ne renvera que des annonces du sport voulut puis se concentre sur la distance en priorité puis le niveau
 
-- wepbpage
+- page utilisateurs : chaque utilisateur a sa propre page lui permettant de modifié ces donnés personnelles tel que son mail, nom, mot de passe, etc...
 
-    - Account creation
-        add a new entry to account database
-        - une page Web
-        - ajout d'un utilisateur à la base de donnee
-        - 2ème page Web
-        - permet de se connecter à un compte existant (ajoute des cookies afin que l'utilisateur reste connecté sur tout les pages.)
+-page de chat :  un système de chat est potentiellement envisagée entre 2 utilisateurs 
 
-    - Gestion de compte
-        allow to modify and delete account + request made by that account
-        - une page de modificatione de compte
-        - un moyen d'obtenir les informations sur un compte
+# Trophée NS
 
+Sporteec est une WebApp permettant de trouver des partenaires pour pratiquer vos sports favoris. Il suffit simplement de vous inscrire, sélectionner votre/vos sport(s) puis votre niveau dans ce sport et notre site vous trouvera automatiquement un ou plusieurs partenaires adaptés à vos critères.
 
-    - Recuperation des match + creation de recherche
-        post a request and look in the database for compatible request
-        - une page Web de recherche
-        Cette page ajoute une nouvelle ligne à la base de données
-        et elle renvoie la liste des personnes disponibles
-
-        - Prend en entrée des criteres : Sport, heure, lieux, niveau, compte (token)
-        Sport, heure, lieux sont renseignés par l'utilisateur.
-        Compte (token) est stocké dans les cookies
-        Niveau est stocké dans la base de données des comptes, avec possibilité de récupérer les données grâce au token.
-
-        - envoi les infos a la base de donnée : Sport, heure, lieux, niveau, compte (token)
-
-        - renvoi une liste de match : chaque match contiens : Sport , heure , lieux , niveau, compte (token)
-    - render matches
-
-        render the list of compatible request
-
-        - Prend en entrée une liste de compte/crénaux de sport et renvoie une page web pour sélectionner les crénaux que l'on veut : Sport, heure, lieux, niveau, compte (token)
-        Cette liste est fournie par l'étape du dessus.
-
-        - Renvoie une page Web qui contient tous les résultats
-        Sur cette page, on peut choisir des crénaux et valider
-
-    - Accept match
-        Allow to select a request and accept it
-        - Prend en entrée une liste de crénaux choisis. (de l'étape précedente)
-        - Envoie une notification aux participants comme quoi une personne est intérressé et les mets en contact.
-
-# Trophée NSI
-
-Sporteec est une WebApp permettant de trouver des partenaires pour pratiquer vos sports favoris. Il suffit simplement de vous inscrire, sélectionner votre/vos sport(s) puis votre niveau dans ce sport et notre site vous trouvera automatiquement un ou plusieurs partenaires adaptés à vos critères. 
-
-# Statut de projet
-
-en cours :
-- répartition des taches
-- division en équipe pour s'occuper d'une tache
-- architecture du site et aspects global
 
 # participant
 
-Romain
-Alexis
-Maxime
-MAD
-Charles botteau
-Hugo
-Rayan
-Thomas
-Clement
-Julien
-Julie
-
-mettez vos noms a cote de la partie de la web page sur laquelle vous voulez bosser essayer d'etre equilibré
-
-+dites si vous etes OK avec l'architecture aue j'ai presente.
- et si vous avez des ameliorations a proposer
+Romain Perez
+Raphaël Vincent 
+Clement Diot
+Julien Farran
 
 
