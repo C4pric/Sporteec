@@ -22,5 +22,11 @@
         "email": "capric.sun.pandac@gmail.com",
         "mot_de_passe": "123",
         "sexe": "homme"
+    },
+    {
+        "nom": "licorne dugabon",
+        "email": "julienfarran1@gmail.com",
+        "mot_de_passe": "mavillemacit\u00e9",
+        "sexe": "autre"
     }
 ]

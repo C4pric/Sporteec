@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
     togglePasswordButtonSignup.addEventListener('click', function() {
         if (isPasswordVisibleSignup) {
             passwordInputSignup.type = 'password';
-            eyeIconSignup.src = 'eye_v.png'; // Changer l'image de l'œil ouvert
+            eyeIconSignup.src = 'Sporteec/css/img/eye_v.png'; // Changer l'image de l'œil ouvert
         } else {
             passwordInputSignup.type = 'text';
-            eyeIconSignup.src = 'eye_nv.png'; // Changer l'image de l'œil barré
+            eyeIconSignup.src = 'Sporteec/css/img/eye_nv.png'; // Changer l'image de l'œil barré
         }
         isPasswordVisibleSignup = !isPasswordVisibleSignup; // Inverser le statut de visibilité du mot de passe
     });
@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
     togglePasswordButtonLogin.addEventListener('click', function() {
         if (isPasswordVisibleLogin) {
             passwordInputLogin.type = 'password';
-            eyeIconLogin.src = 'eye_v.png'; // Changer l'image de l'œil ouvert
+            eyeIconLogin.src = 'Sporteec/css/img/eye_v.png'; // Changer l'image de l'œil ouvert
         } else {
             passwordInputLogin.type = 'text';
-            eyeIconLogin.src = 'eye_nv.png'; // Changer l'image de l'œil barré
+            eyeIconLogin.src = 'Sporteec/css/img/eye_nv.png'; // Changer l'image de l'œil barré
         }
         isPasswordVisibleLogin = !isPasswordVisibleLogin; // Inverser le statut de visibilité du mot de passe
     });
