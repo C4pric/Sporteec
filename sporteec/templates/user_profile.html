@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporteec | user Profile</title>
+    <link rel="stylesheet" href="css/user_profile.css">
+    <link rel="icon" type="image/png" href="css/img/logo.png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <li>
+                    <a href="page-principale.html"><img src="css/img/logo.png" class="logo"></a>
+                    <a href="index.html"><button class="déconnecter">Se déconnecter</button></a>
+                    <a href="index.html"><img src="css/img/logo.png" class="logo"></a>
+            </li>
+        </div>
+    </header>
+
+    <div class="container">
+
+            <div class="card mb-2">
+                <div class="card-body">
+                    <div class="profile-info">
+                        {% if profile_picture == "" %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                            </svg>
+                        {% else %}
+                            <img src={{profile_picture}} class="rounded-circle" alt="profile icon">
+                        {% endif %}
+                        <div class="profile-details">
+                            <h4>{{Nom}}</h4>
+                            <p class="text-description">{{user_data_description}}</p>
+                            <p class="text-contact">{{user_data_contact}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <a href="edit_profile.html"><button class="edit">Modifier le profil</button></a>
+            <div class="not-logged-in">
+                <h1>Vous n'êtes pas connecté.</h1>
+                <h2>Connectez ou inscrivez vous pour accéder à cette page.</h2>
+                <a href="inscription_connection.html"><button class="connecter">Se connecter</button></a>
+            </div>
+    </div>
+</body>
+</html>
