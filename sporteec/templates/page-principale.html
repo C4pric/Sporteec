@@ -14,12 +14,12 @@
         <center><h2 class="subtitle"> NOS SPORTS</h2></center>
         <center><a href="{{ url_for('reussi', sport='bad') }}"><img src="static/css/img/bad.png" class="logos"></a></center>
         <center><a href="{{ url_for('reussi', sport='basket') }}"><img src="static/css/img/basket.png" class="logos"></a></center>
-        <center><a href="page_bad.html"><img src="static/css/img/boxe.png" class="logos"></center>
-        <center><a href="page_bad.html"><img src="static/css/img/foot.png" class="logos"></center>
-        <center><a href="page_bad.html"><img src="static/css/img/golf.png" class="logos"></center>
-        <center><a href="page_bad.html"><img src="static/css/img/tennis.png" class="logos"></center>
-        <center><a href="page_bad.html"><img src="static/css/img/velo.png" class="logos"></center>
-        <center><a href="page_bad.html"><img src="static/css/img/volley.png" class="logos"></center>
+        <center><a href="{{ url_for('reussi', sport='boxe') }}"><img src="static/css/img/boxe.png" class="logos"></a></center>
+        <center><a href="{{ url_for('reussi', sport='foot') }}"><img src="static/css/img/foot.png" class="logos"></a></center>
+        <center><a href="{{ url_for('reussi', sport='golf') }}"><img src="static/css/img/golf.png" class="logos"></a></center>
+        <center><a href="{{ url_for('reussi', sport='tennis') }}"><img src="static/css/img/tennis.png" class="logos"></a></center>
+        <center><a href="{{ url_for('reussi', sport='velo') }}"><img src="static/css/img/velo.png" class="logos"></a></center>
+        <center><a href="{{ url_for('reussi', sport='volley') }}"><img src="static/css/img/volley.png" class="logos"></a></center>
     </div>
   </div>
   <div class="sidebar" id="sidebar2">
@@ -76,7 +76,7 @@
               <a href="/deposer" class="btn">
                   <img src="static/css/img/annonce.png" alt="Icône annonce">Déposer une annonce</a>
           </li>
-          <li><a href="static/css/img/user_profile.html" ><img src="static/css/img/user_profile.png" class="photo"></a></li>
+          <li><a href="/user" ><img src="static/css/img/user_profile.png" class="photo"></a></li>
       </ul>
   </nav>
 </header>
@@ -85,5 +85,8 @@
         </ul>
     </nav>
   </header>
+</body>
+</html>
+
 </body>
 </html>
