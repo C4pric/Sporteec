@@ -6,8 +6,7 @@
   <title>Sporteec | Principal</title>
   <link rel="stylesheet" href="static/css/page-principale.css">
   <link rel="icon" type="image/png" href="css/img/logo.png">
-  <script src="script.js"></script> 
-  <link rel="icon" type="image/png" href="static/css/img/logo.png"></head>
+  <script src="script.js"></script> </head>
 <body>
 
   <div class="sidebar" id="sidebar1">
@@ -68,13 +67,20 @@
           <br /> 
         {% endfor %}
       </ul>
+      <br /> <br /> <br /> <br /> <br /> <br /> 
     </div>
   </div>
-
+  
 <header>
   <div class="logo">
       <a href="/"><img src="static/css/img/logo.png" alt="Logo"></a>
   </div>
+  <div class="box">
+      <form name="search">
+          <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+      </form>
+      <i class="fas fa-search"></i>
+  </div>  
   <nav>
       <ul>
           <li>
@@ -92,17 +98,17 @@
   </header>
   <script>
     function filterAnnonces(clickedImage) {
-      const selectedSport = clickedImage.dataset.sport; // Get sport from data-sport attribute
-      const annoncesList = document.getElementById('annonces-list'); // Get annonces list element
+      const selectedSport = clickedImage.dataset.sport; 
+      const annoncesList = document.getElementById('annonces-list'); 
 
-      annoncesList.querySelectorAll('li').forEach(annonce => { // Loop through all annonces
-        const annonceSport = annonce.querySelector('.text-sport').textContent.split(':')[1].trim(); // Get sport from annonce
-        annonce.style.display = selectedSport === 'all' || selectedSport === annonceSport ? 'block' : 'none'; // Show/hide based on selected sport
+      annoncesList.querySelectorAll('li').forEach(annonce => { 
+        const annonceSport = annonce.querySelector('.text-sport').textContent.split(':')[1].trim(); 
+        annonce.style.display = selectedSport === 'all' || selectedSport === annonceSport ? 'block' : 'none'; 
       });
     }
     const toutAfficherBtn = document.getElementById('tout-afficher-btn');
     toutAfficherBtn.addEventListener('click', () => {
-      filterAnnonces({ dataset: { sport: 'all' } }); // Simulate click on "Tout afficher" button
+      filterAnnonces({ dataset: { sport: 'all' } }); 
     });
   </script>
 
