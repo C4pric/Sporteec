@@ -1,13 +1,15 @@
-
 body,header{
     margin: 0;
 }
 body {
-   
     font-family: Arial, sans-serif;
 }
-.box{
+.box {
     position: relative;
+    flex-grow: 1; /* Allow the search box to take available space */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .input {
@@ -23,9 +25,9 @@ body {
     color: #ffd52d;
     outline: none;
     transition: .5s;
-    margin-right: 60px;
 }
-.box:hover input{
+.input:hover,
+.input:focus {
     width: 350px;
     background: #3b3640;
     border-radius: 10px;
@@ -39,12 +41,12 @@ body {
     color: #ffd52d;
     transition: .2s;
 }
-.box:hover i{
+.box:hover i,
+.input:focus + i {
     opacity: 0;
     z-index: -1;
 }
-  
-  
+
 #sidebar1{
     position: fixed;
     margin-top: 124px;
@@ -66,7 +68,6 @@ body {
     background-color: #f8e0e0;
     color: #fff;
     overflow-y: auto;
-    
     padding-top: 20px;
 }
 .case{
@@ -89,6 +90,7 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 97%; /* Reduce the width */
 }
 
 .annonce-details {
@@ -106,15 +108,10 @@ body {
 
 /* Ajoutez ces styles pour la carte Google Maps */
 .map-container {
-    width: 600px; /* Ajustez la largeur de la carte */
-    height: 75px; /* Ajustez la hauteur de la carte */
+    width: 500px; /* Adjust the width of the map */
+    height: 350px; /* Adjust the height of the map */
     position: relative;
     overflow: hidden;
-    padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px; /* Ajoutez un espacement entre les informations de l'annonce et la carte */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -127,61 +124,57 @@ body {
     height: 100%;
     border: 0;
 }
-  
+
 .scrollable-content {
     padding: 20px;
 }
-  
-  /* Style de la barre défilante */
+
+/* Style de la barre défilante */
 .sidebar h2 {
     margin-top: 0;
 }
-  
+
 .sidebar ul {
     list-style-type: none;
     padding: 0;
 }
-  
+
 .sidebar ul li {
     padding: 10px 0;
     border-bottom: 1px solid #555;
 }
-  
+
 .sidebar ul li:last-child {
     border-bottom: none;
 }
 
-  
 ::-webkit-scrollbar {  
     width: 5px;
 }
-  
-  
+
 ::-webkit-scrollbar-track {
     background-color: #f1f1f1;
 }
-  
-  
+
 ::-webkit-scrollbar-thumb {
     background-color: #888;
 }
-  
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
 .logos{
-    width: 50% ;
+    width: 50%;
     margin-bottom: 50px;
 }
 .subtitle{
-    color:#0086d3 ; 
+    color: #0086d3; 
     font-size: 30px;
     font-family: "Lexend", sans-serif;
     font-weight: 700; 
 }
 .recommendations{
-    color:#0086d3 ; 
+    color: #0086d3; 
     font-size: 30px;
     font-family: "Lexend", sans-serif;
     font-weight: 700; 
@@ -195,7 +188,7 @@ header {
     color: #fff;
     padding: 10px 10px;
     display: flex;
-    justify-content: flex-start; /* Align items to the start (left) */
+    justify-content: space-between; /* Distribute space between items */
     align-items: center; /* Center items vertically */
 }
 
@@ -204,20 +197,24 @@ header {
     height: auto; 
     margin-right: 100px; 
     border-radius: 22px;
-    margin-left:30px
+    margin-left: 30px;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 30px; 
+    margin-right: 30px;
 }
 
 nav ul li:last-child {
@@ -239,12 +236,11 @@ nav ul li a {
     transition: background-color 0.3s;
     display: flex;
     align-items: center;
-    width: 60%;
-    height: 60%;
+    width: auto; /* Adjust to fit the content */
+    height: auto; /* Adjust to fit the content */
 }
 
-.photo{
-        width: 100px;
-        margin-right: 40px;
-        margin-top: 5%;
+.photo {
+    width: 100px;
+    margin-right: 40px;
 }
