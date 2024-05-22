@@ -6,60 +6,70 @@
   <title>Sporteec | Principal</title>
   <link rel="stylesheet" href="static/css/page-principale.css">
   <link rel="icon" type="image/png" href="css/img/logo.png">
-</head>
+  <script src="script.js"></script> </head>
 <body>
 
   <div class="sidebar" id="sidebar1">
     <div class="scrollable-content" id="scrollable-content">
-        <center><h2 class="subtitle"> NOS SPORTS</h2></center>
-        <center><a href="{{ url_for('reussi', sport='bad') }}"><img src="static/css/img/bad.png" class="logos"></a></center>
-        <center><a href="{{ url_for('reussi', sport='basket') }}"><img src="static/css/img/basket.png" class="logos"></a></center>
-        <center><a href="{{ url_for('reussi', sport='boxe') }}"><img src="static/css/img/boxe.png" class="logos"></a></center>
-        <center><a href="{{ url_for('reussi', sport='foot') }}"><img src="static/css/img/foot.png" class="logos"></a></center>
-        <center><a href="{{ url_for('reussi', sport='golf') }}"><img src="static/css/img/golf.png" class="logos"></a></center>
-        <center><a href="{{ url_for('reussi', sport='tennis') }}"><img src="static/css/img/tennis.png" class="logos"></a></center>
-        <center><a href="{{ url_for('reussi', sport='velo') }}"><img src="static/css/img/velo.png" class="logos"></a></center>
-        <center><a href="{{ url_for('reussi', sport='volley') }}"><img src="static/css/img/volley.png" class="logos"></a></center>
-    </div>
+      <center><button id="tout-afficher-btn"><h2 class="subtitle">NOS SPORTS</h2></button></center>
+      <center>
+        <img src="static/css/img/bad.png" class="logos" data-sport="badminton" alt="Badminton" onclick="filterAnnonces(this)"> </center>
+      <center>
+        <img src="static/css/img/basket.png" class="logos" data-sport="basketball" alt="Basketball" onclick="filterAnnonces(this)"></center>
+      <center>
+        <img src="static/css/img/boxe.png" class="logos" data-sport="boxe" alt="Boxe" onclick="filterAnnonces(this)"></center>
+      <center>
+        <img src="static/css/img/foot.png" class="logos" data-sport="football" alt="Foot" onclick="filterAnnonces(this)"></center>
+      <center>
+        <img src="static/css/img/golf.png" class="logos" data-sport="golf" alt="Golf" onclick="filterAnnonces(this)"></center>
+      <center>
+        <img src="static/css/img/ping-pong.png" class="logos" data-sport="ping pong" alt="Ping Pong" onclick="filterAnnonces(this)"></center>
+      <center>
+        <img src="static/css/img/tennis.png" class="logos" data-sport="tennis" alt="Tennis" onclick="filterAnnonces(this)"></center>
+      <center>
+        <img src="static/css/img/velo.png" class="logos" data-sport="velo" alt="Velo" onclick="filterAnnonces(this)"></center>
+      <center>
+        <img src="static/css/img/volley.png" class="logos" data-sport="volley" alt="Volley" onclick="filterAnnonces(this)"></center>
+      <br />  <br />  <br />  <br />  <br />  
+      </div>
   </div>
   <div class="sidebar" id="sidebar2">
     <div class="case">
       <h2 class="recommendations">Recommendations</h2>
-      <ul>
-        {% for annonce in annonces %}
-        <li class="case_content">
-          <div class="annonce-details">
-            <div class="left-info">
-              <p><strong>Titre:</strong> {{ annonce.titre }}</p>
-              <p><strong>Description:</strong> {{ annonce.description }}</p>
-              <p><strong>Date:</strong> {{ annonce.date }}</p>
-              <p><strong>Heure:</strong> {{ annonce.heure }}</p>
-            </div>
-            <div class="right-info">
-              <p><strong>Sport:</strong> {{ annonce.sport }}</p>
-              <div class="niveau-indicateur niveau-intermediaire"> <!-- Ajoutez la classe pour spécifier la couleur -->
-                <p><strong>Niveau:</strong> {{ annonce.niveau }}</p>
+      <ul id="annonces-list"> {% for annonce in annonces %}
+          <li class="case_content">
+            <div class="annonce-details">
+              <div class="left-info">
+                <p><strong>Titre:</strong> {{ annonce.titre }}</p>
+                <p><strong>Description:</strong> {{ annonce.description }}</p>
+                <p><strong>Date:</strong> {{ annonce.date }}</p>
+                <p><strong>Heure:</strong> {{ annonce.heure }}</p>
               </div>
-              <p><strong>Lieu:</strong> {{ annonce.lieu }}</p>
-              <p><strong>Créateur:</strong> {{ annonce.nom_utilisateur }}</p>
+              <div class="right-info">
+                <p class="text-sport"><strong>Sport:</strong> {{ annonce.sport }}</p>
+                <div class="niveau-indicateur niveau-intermediaire"> <p><strong>Niveau:</strong> {{ annonce.niveau }}</p>
+                </div>
+                <p><strong>Lieu:</strong> {{ annonce.lieu }}</p>
+                <p><strong>Créateur:</strong> {{ annonce.nom_utilisateur }}</p>
+              </div>
             </div>
-          </div>
-          <!-- Ajoutez la carte Google Maps à côté des informations de l'annonce -->
-          <div class="map-container">
-            <iframe
-              width="150" 
-              height="75" 
-              frameborder="0"
-              style="border:0"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAbGpdk_Yrp-sf4sFMSsCx3N2TuePn-neo&q={{ annonce.lieu }}"
-              allowfullscreen>
-            </iframe>
-          </div>
-        </li>
+            <div class="map-container">
+              <iframe
+                width="150" 
+                height="75" 
+                frameborder="0"
+                style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAbGpdk_Yrp-sf4sFMSsCx3N2TuePn-neo&q={{ annonce.lieu }}"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </li>
+          <br /> 
         {% endfor %}
       </ul>
     </div>
-</div>
+  </div>
+
 <header>
   <div class="logo">
       <a href="/"><img src="static/css/img/logo.png" alt="Logo"></a>
@@ -85,8 +95,21 @@
         </ul>
     </nav>
   </header>
-</body>
-</html>
+  <script>
+    function filterAnnonces(clickedImage) {
+      const selectedSport = clickedImage.dataset.sport; // Get sport from data-sport attribute
+      const annoncesList = document.getElementById('annonces-list'); // Get annonces list element
+
+      annoncesList.querySelectorAll('li').forEach(annonce => { // Loop through all annonces
+        const annonceSport = annonce.querySelector('.text-sport').textContent.split(':')[1].trim(); // Get sport from annonce
+        annonce.style.display = selectedSport === 'all' || selectedSport === annonceSport ? 'block' : 'none'; // Show/hide based on selected sport
+      });
+    }
+    const toutAfficherBtn = document.getElementById('tout-afficher-btn');
+    toutAfficherBtn.addEventListener('click', () => {
+      filterAnnonces({ dataset: { sport: 'all' } }); // Simulate click on "Tout afficher" button
+    });
+  </script>
 
 </body>
 </html>
