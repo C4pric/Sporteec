@@ -1,0 +1,228 @@
+body, header {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.logo {
+    max-width: 110px;
+    border-radius: 28px;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+body {
+    background: linear-gradient(to right, #dc0073, #1ff6fd) no-repeat 0 0 / cover;
+    min-height: 100vh; /* Hauteur minimale égale à 100% de la hauteur de la fenêtre */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Couleur de fond de votre choix */
+    background-size: cover; /* Ajuste la taille de l'image de fond pour couvrir tout le corps */
+    background-position: center; /* Centre l'image de fond */
+}
+
+.logo img {
+    margin-left: 50%;
+    border-radius: 28px;
+    max-width: 100px;
+}
+
+
+ul li {
+    display: inline;
+    margin-right: 30px; /* Réduit l'espacement entre les éléments de navigation */
+}
+
+li:last-child {
+    margin-right: 0;
+}
+
+
+.déconnecter {
+    margin-left: 78%;
+    margin-top: 10px ;
+    --bg: #000000;
+    --text-color: #fff;
+    position: relative;
+    width: 190px;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 1em;
+    font-weight: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 10px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #545454 0px 7px 2px, #363636 0px 8px 5px;
+}
+
+.connecter {
+    margin-top: 10px ;
+    --bg: #000000;
+    --text-color: #fff;
+    position: relative;
+    width: 190px;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 1em;
+    font-weight: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 10px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #545454 0px 7px 2px, #363636 0px 8px 5px;
+}
+
+.sauvegarder {
+    margin-top: 10px ;
+    --bg: #ffffff;
+    --text-color: #000000;
+    position: relative;
+    width: 190px;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 1em;
+    font-weight: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 10px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #b6b6b6 0px 7px 2px, #909090 0px 8px 5px;
+    margin-left: 25%;
+    margin-bottom: 30px ;
+}
+  
+.profile-picture img {
+    width: 150px; /* Ajustez la taille de l'image de profil selon vos besoins */
+    height: 150px;
+    border-radius: 50%; /* Pour obtenir une forme circulaire */
+    margin-bottom: 20px; /* Espacement entre l'image de profil et les autres éléments */
+    margin-top: 15px;
+    margin-left: 35%;
+}
+
+.form-control1{
+    width: 61%;
+}
+.form-control2{
+    width: 60%;
+}
+.form-control3{
+    width: 55%;
+}
+.form-control4{
+    width: 54%;
+}
+/* Style pour le bouton de sélection */
+form select {
+    width: 64%; /* Définissez la largeur du bouton de sélection */
+    padding: 10px; /* Ajoutez un remplissage pour un aspect agréable */
+    font-size: 16px; /* Taille de police */
+    border-radius: 5px; /* Ajoutez des coins arrondis */
+    border: 1px solid #ccc; /* Ajoutez une bordure */
+    background-color: #fff; /* Couleur de fond */
+    appearance: none; /* Réinitialisez l'apparence native du bouton */
+    cursor: pointer; /* Curseur au survol */
+}
+
+/* Style pour l'option par défaut */
+form select option:first-child {
+    color: #999; /* Couleur du texte pour l'option par défaut */
+}
+
+  
+button:hover {
+    opacity: 1;
+}
+  
+button:active {
+    top: 4px;
+    box-shadow: #434343 0px 3px 2px,#000000 0px 3px 5px;
+}
+
+.profile-info {
+    color: #ffffff;
+    display: table-cell;
+    vertical-align: middle; /* Aligne les éléments verticalement */
+    
+}
+
+form select option {
+    text-align: center; /* Centrer le texte à l'intérieur de l'option */
+}
+
+.form-group1 {
+    font-size: 22px; /* Taille du texte pour le nom d'utilisateur */
+    margin-bottom: 15px;
+}
+
+.form-group2 {
+    font-size: 16px; /* Taille du texte pour la description */
+    margin-bottom: 15px;
+}
+
+.form-group3 {
+    font-size: 17px; /* Taille du texte pour le sport */
+    margin-bottom: 15px;
+}
+
+
+
+.profile-details > *:not(:last-child) {
+    border-bottom: 1px solid #ffffffd5; /* Ajoute une bordure en tiret entre chaque élément */
+    padding-bottom: 10px; /* Ajoute un padding entre chaque élément */
+}
+.card {
+    width: 100%;
+    max-width: 700px; /* Ajustez la largeur maximale de la carte selon vos besoins */
+    margin: 20px auto; /* Centrer la carte horizontalement */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre pour la profondeur */
+}
+
+.card-body {
+    background-color:#000000b4; /* Pour rendre le fond transparent */
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.not-logged-in {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Barre de défilement */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Couleur de la piste de défilement */
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+/* Couleur du curseur de défilement */
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+/* Au survol de la barre de défilement */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+
+

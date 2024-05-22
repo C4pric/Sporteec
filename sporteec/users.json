@@ -1,0 +1,32 @@
+[
+    {
+        "nom": "Mohamed",
+        "email": "kilimsong@gmail.com",
+        "mot_de_passe": "leblanc",
+        "sexe": "femme"
+    },
+    {
+        "nom": "Phillipe",
+        "email": "etchenchenbest@gmail.com",
+        "mot_de_passe": "jvaistesautercommeundindon",
+        "sexe": "autre"
+    },
+    {
+        "nom": "oniichan",
+        "email": "kawaine@gmail.com",
+        "mot_de_passe": "manga",
+        "sexe": "homme"
+    },
+    {
+        "nom": "Vincent ",
+        "email": "capric.sun.pandac@gmail.com",
+        "mot_de_passe": "pbkdf2:sha256:260000$zND8qhwzML40uDsu$dfa16cca4edd7bff3065af0f5fe980b4541342eee42cd19c3414e2ed9a6ec1f3",
+        "sexe": "homme"
+    },
+    {
+        "nom": "Vincent ",
+        "email": "capric.sun.pandac@gmail.com",
+        "mot_de_passe": "pbkdf2:sha256:260000$KtUxFyEtin9PYlEb$02259a1ae09bef05d1b14137faa10129df32b07f57f3ca2591be5ec52bde9da2",
+        "sexe": "homme"
+    }
+]

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Création d'annonce - Rencontre Sportive</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/png" href="static/css/img/logo.png">
+<style>
+        /* Reset CSS */
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+    
+        /* Body Styles */
+        body {
+          font-family: 'Lexend', sans-serif;
+          background: linear-gradient(to right, #dc0073, #1ff6fd) no-repeat 0 0 / cover;
+          min-height: 100vh; /* Hauteur minimale égale à 100% de la hauteur de la fenêtre */
+          margin: 0;
+          background-color: #ffffff; /* Couleur de fond de votre choix */
+          background-size: cover; /* Ajuste la taille de l'image de fond pour couvrir tout le corps */
+          background-position: center; /* Centre l'image de fond */
+        }
+
+        .logo {
+            max-width: 110px;
+            border-radius: 28px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+    
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.8); /* Ajout d'un fond semi-transparent */
+          border-radius: 10px;
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre */
+          position: relative; /* Pour positionner le logo */
+        }
+    
+        h1 {
+          font-size: 2rem;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+    
+        form {
+          padding: 20px;
+        }
+    
+        .form-group {
+          margin-bottom: 20px;
+        }
+    
+        label {
+          font-weight: bold;
+          display: block;
+          margin-bottom: 5px;
+        }
+    
+        input[type="text"],
+        textarea,
+        select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+          outline: none;
+        }
+    
+        select {
+          appearance: none;
+          background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+        }
+    
+        button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+    
+        button:hover {
+          background-color: #45a049;
+        }
+    
+        #map {
+          height: 300px;
+          width: 100%;
+          margin-top: 20px;
+          border-radius: 5px;
+        }
+    
+        #lieu {
+          width: calc(100% - 20px);
+        }
+    
+    
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <a href="/reussi"><img src="static/css/img/logo.png" alt="logo" class="logo"></a>
+        </header>
+    
+        <div class="container">
+        <h1>Création d'annonce</h1>
+        <form id="annonce-form" action="{{ url_for('creer_annonce') }}" method="POST">
+            <div class="form-group">
+                <label for="titre">Titre :</label>
+                <input type="text" id="titre" name="titre" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description :</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date">Date :</label>
+                <input type="text" id="date" name="date" placeholder="Sélectionnez une date" required>
+            </div>
+            <div class="form-group">
+                <label for="heure">Heure :</label>
+                <input type="text" id="heure" name="heure" placeholder="Sélectionnez l'heure" required>
+            </div>
+            <div class="form-group">
+                <label for="sport">Sport :</label>
+                <select id="sport" name="sport" required>
+                    <option value="">Choisir votre sport</option>
+                    <option value="football">Football</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="tennis">Tennis</option>
+                    <option value="badminton">Badminton</option>
+                    <option value="boxe">Boxe</option>
+                    <option value="golf">Golf</option>
+                    <option value="velo">Velo</option>
+                    <option value="volley">Volley</option>
+                    <option value="ping pong">Ping pong</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="niveau">Niveau :</label>
+                <select id="niveau" name="niveau" required>
+                    <option value="">Choisir votre niveau</option>
+                    <option value="violet">Violet - Athlètes</option>
+                    <option value="noir">Noir - Expert</option>
+                    <option value="rouge">Rouge - Avancé</option>
+                    <option value="bleu">Bleu - Intermédiaire</option>
+                    <option value="vert">Vert - Amateur</option>
+                    <option value="jaune">Jaune - Débutant</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lieu">Lieu :</label>
+                <input type="text" id="lieu" name="lieu" placeholder="Recherchez un lieu ici" required>
+            </div>
+            <div id="map"></div>
+            <button type="submit" id="creerAnnonceBtn">Créer l'annonce</button>
+        </form>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="index.js"></script>
+    <script>
+    // JavaScript code here
+    
+    // Ajout d'un gestionnaire d'événements au bouton "Créer l'annonce"
+    document.getElementById("creerAnnonceBtn").addEventListener("click", function(event) {
+        event.preventDefault(); // Empêcher le comportement par défaut du bouton
+    
+        // Soumettre le formulaire manuellement
+        document.getElementById("annonce-form").submit();
+    });
+    
+    // Validation du formulaire
+    document.getElementById("annonce-form").addEventListener("submit", function(event) {
+        // Récupération des valeurs des champs
+        var titre = document.getElementById("titre").value.trim();
+        var description = document.getElementById("description").value.trim();
+        var date = document.getElementById("date").value.trim();
+        var heure = document.getElementById("heure").value.trim();
+        var sport = document.getElementById("sport").value.trim();
+        var niveau = document.getElementById("niveau").value.trim();
+        var lieu = document.getElementById("lieu").value.trim();
+    
+        // Validation des champs obligatoires
+        if (titre === "" || description === "" || date === "" || heure === "" || sport === "" || niveau === "" || lieu === "") {
+            alert("Veuillez remplir tous les champs du formulaire.");
+            event.preventDefault();
+        } else {
+            // Vérification des mots interdits dans le titre et la description
+            var motsInterdits = [
+                "sexe", "haine", "discrimination", "racisme", "vulgarité", "drogue", "insulte", "harcèlement",
+                "porno", "pornographie", "nudité", "nudiste", "nudisme", "viol", "agression", "arme", "torture", "crime", "meurtre",
+                "esclavage", "trafic", "prostitution", "escorte", "escroquerie", "arnaque", "fraude", "corruption", "terrorisme",
+                "extrémisme", "extrémiste", "antisémitisme", "homophobie", "xénophobie", "islamophobie",
+                "blasphème", "profanation",
+                "blasphématoire"
+            ]; // Remplacez les mots interdits par les vôtres
+            var motsTitre = titre.split(" ");
+            var motsDescription = description.split(" ");
+    
+            for (var i = 0; i < motsInterdits.length; i++) {
+                if (motsTitre.includes(motsInterdits[i]) || motsDescription.includes(motsInterdits[i])) {
+                    alert("Certains mots sont interdits dans le titre ou la description.");
+                    event.preventDefault();
+                    return;
+                }
+            }
+            // Si le formulaire est valide, il peut être soumis
+            alert("Formulaire soumis avec succès !");
+        }
+    });
+    
+    // Fonction d'initialisation de l'autocomplétion de lieu
+    function initAutocomplete() {
+        const input = document.getElementById('lieu');
+        const options = {
+            // types: ['geocode'], // Décommentez si vous voulez restreindre la recherche à des lieux géographiques
+            // componentRestrictions: {country: 'fr'} // Décommentez et changez 'fr' par votre code de pays désiré pour les restrictions
+        };
+    
+        const autocomplete = new google.maps.places.Autocomplete(input, options);
+    
+        // Initialisation de la carte
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15
+        });
+    
+        // Récupération de la position de l'utilisateur
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                map.setCenter(userLocation);
+            }, () => {
+                console.error('La géolocalisation a échoué');
+            });
+        }
+    
+        // Initialisation du marqueur
+        const marker = new google.maps.Marker({
+            map: map,
+            draggable: false // Changez à true si vous voulez que le marqueur soit déplaçable
+        });
+    
+        // Ajout d'un écouteur pour mettre à jour la carte et le marqueur lorsqu'un lieu est sélectionné
+        autocomplete.addListener('place_changed', () => {
+            const place = autocomplete.getPlace();
+            if (!place.geometry) {
+                console.error('Aucune donnée de localisation pour cet endroit');
+                return;
+            }
+    
+            // Mettre à jour le centre de la carte et la position du marqueur
+            map.setCenter(place.geometry.location);
+            marker.setPosition(place.geometry.location);
+        });
+    
+        // Initialisation de Flatpickr pour l'entrée de date
+        flatpickr("#date", {
+            dateFormat: "Y-m-d", // Format de date
+            minDate: "today", // Empêcher les dates antérieures à aujourd'hui
+            theme: "material_blue" // Thème personnalisé pour Flatpickr
+        });
+    
+        // Initialisation de Flatpickr pour l'entrée de l'heure
+        flatpickr("#heure", {
+            enableTime: true, // Activer le choix de l'heure
+            noCalendar: true, // Ne pas afficher le calendrier
+            dateFormat: "H:i", // Format de l'heure
+            time_24hr: true // Utiliser le format 24 heures
+        });
+    }
+    
+    </script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbGpdk_Yrp-sf4sFMSsCx3N2TuePn-neo&libraries=places&callback=initAutocomplete" async defer></script>
+    </body>
+    </html>

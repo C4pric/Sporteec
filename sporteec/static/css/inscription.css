@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url('img/inscription_connection.png');
+    background-size: auto 250%;
+    background-position: center;
+    font-family: 'Lexend', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    margin: -20px 0 50px;
+    animation: moveBackground 100s linear infinite;
+
+  }
+  
+  @keyframes moveBackground {
+    0% {
+        background-position: center;
+    }
+    25% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 0 100%;
+    }
+    75% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: center;
+    }
+  }
+  
+  header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+  }
+  .logo {
+      max-width: 110px;
+      border-radius: 28px;
+  }
+  
+  h1 {
+      font-weight: 700px;
+      margin-bottom: 30px;
+  }
+  
+  p {
+      font-size: 17px;
+      font-weight: 150px;
+      line-height: 20px;
+      letter-spacing: .5px;
+      margin: 20px 0 30px;
+  }
+  
+  .container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+      0 10px 10px rgba(0,0,0,0.22);
+      position: relative;
+      overflow: hidden;
+      width: 768px;
+      max-width: 100%;
+      min-height: 480px;
+  }
+  
+  .form-container {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      transition: all .6s ease-in-out;
+  
+      form {
+          background: #fffefe;
+          display: flex;
+          flex-direction: column;
+          padding: 0 50px;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+      }
+  
+      input {
+          background: #f5f4f4;
+          border: none;
+          padding: 12px 15px;
+          width: 100%;
+      }
+  }
+  
+  .sign-up-container {
+      left: 0;
+      width: 50%;
+      opacity: 0;
+      z-index: 1;
+  }
+  
+  .sign-in-container {
+      left: 0;
+      width: 50%;
+      z-index: 2;
+  }
+  
+  .overlay-container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      transition: transform .6s ease-in-out;
+      z-index: 100;
+  }
+  
+  .overlay {
+      background: #ff416d;
+      background: linear-gradient(to right, #dc0073, #26befa) no-repeat 0 0 / cover;
+      color: #eaf49f;
+      position: relative;
+      left: -100%;
+      height: 100%;
+      width: 200%;
+      transform: translateX(0);
+      transition: transform .6s ease-in-out;
+  }
+  
+  .overlay-panel {
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+      height: 100%;
+      width: 50%;
+      text-align: center;
+      transform: translateX(0);
+      transition: transform .6s ease-in-out;
+  }
+  
+  .overlay-right {
+      right: 0;
+      transform: translateX(0%);
+  }
+  
+  .overlay-left {
+      transform: translateX(-20%);
+  }
+  
+  button {
+      --bg: #e74c3c;
+      --text-color: #fff;
+      position: relative;
+      width: 150px;
+      border: none;
+      background: var(--bg);
+      color: var(--text-color);
+      padding: 1em;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: 0.2s;
+      border-radius: 5px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+      box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
+  }
+    
+  button:hover {
+      opacity: 1;
+  }
+    
+  button:active {
+      top: 4px;
+      box-shadow: #c0392b 0px 3px 2px,#000 0px 3px 5px;
+  }
+  
+  .sign-up-button {
+      margin-top: 3%;
+  }
+    
+  
+  .ghost {
+      --bg: #000000;
+      --text-color: #fff;
+      position: relative;
+      width: 150px;
+      border: none;
+      background: var(--bg);
+      color: var(--text-color);
+      padding: 1em;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: 0.2s;
+      border-radius: 5px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+      box-shadow: #545454 0px 7px 2px, #363636 0px 8px 5px;
+  }
+    
+  .ghost:active {
+      top: 4px;
+      box-shadow: #434343 0px 3px 2px,#000000 0px 3px 5px;
+  }
+  
+  .container.right-panel-active .sign-in-container {
+      transform: translateX(100%);
+  }
+  
+  .container.right-panel-active .overlay-container{
+      transform: translateX(-100%);
+  }
+  
+  .container.right-panel-active .sign-up-container {
+      transform: translateX(100%);
+      opacity: 1;
+      z-index: 5;
+  }
+  
+  .container.right-panel-active .overlay {
+      transform: translateX(50%);
+  }
+  
+  .container.right-panel-active .overlay-left {
+      transform: translateX(0);
+  }
+  
+  .container.right-panel-active .overlay-right {
+      transform: translateX(20%);
+  }
+  
+  a.forgot-password {
+    text-decoration: none; /* Supprime la soulignement */
+    color: rgb(0, 0, 0); /* Change la couleur du lien en bleu */
+    margin-bottom: 15px;
+    margin-left: 140px;
+    font-size: 15px;
+  }
+  
+  .password-container {
+      position: relative;
+  }
+  
+  #passwordInput {
+      padding-right: 30px; /* Pour laisser de l'espace pour l'icône */
+  }
+  
+  .password-container {
+      position: relative;
+  }
+  
+  .eye-button {
+      position: absolute;
+      right: 50px; /* Ajustez ceci selon votre préférence */
+      top: 60.5%; /* Pour la partie inscription */
+      transform: translateY(-50%);
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 4px; /* Ajustez la taille de la zone cliquable */
+  }
+  
+  .sign-in-container .eye-button {
+      top: 47%; /* Pour la partie connexion */
+  }
+  .sign-up-container .eye-button {
+      top: 54.5%; /* Pour la partie connexion */
+  }
+  
+  .eye-button img {
+      width: 18px;
+      height: auto;
+  }
+  
+  
+  
+  /* Styles pour les radios boutons */
+  .radios {
+      display: flex; /* Affiche les radios boutons en ligne */
+      justify-content: center; /* Centre les radios boutons horizontalement */
+      align-items: center; /* Centre les radios boutons verticalement */
+  }
+  
+  .radios input[type="radio"] {
+      display: none; /* Masquer les radios boutons par défaut */
+  }
+  
+  .radios label {
+      margin: 0 10px; /* Marge autour des labels */
+      cursor: pointer; /* Curseur pointer pour indiquer l'interaction */
+      margin-top: 5%;
+  }
+  
+  /* Styles pour les radios boutons */
+  .radios input[type="radio"] + label::before {
+      content: '';
+      display: inline-block;
+      width: 20px; /* Largeur du radio bouton */
+      height: 20px; /* Hauteur du radio bouton */
+      border: 2px solid rgb(0, 0, 0); /* Bordure bleue */
+      border-radius: 50%; /* Pour créer un cercle */
+      margin-right: 5px; /* Espacement entre le radio bouton et le label */
+      vertical-align: middle; /* Alignement vertical */
+  }
+  
+  /* Styles pour les radios boutons cochés */
+  .radios input[id="radio1"]:checked + label::before {
+      background: radial-gradient(circle, #03b0ee, #2685fa) no-repeat 0 0 / cover; /* Dégradé en cercle */
+  }
+  
+  
+  .radios input[id="radio2"]:checked + label::before {
+      background: radial-gradient(circle, #ff0ee3, #ff5599) no-repeat 0 0 / cover; /* Dégradé en cercle */
+  }
+  
+  .radios input[id="radio3"]:checked + label::before {
+      background: radial-gradient(circle, #b16dff, #7b00e7) no-repeat 0 0 / cover; /* Dégradé en cercle */
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+  }
