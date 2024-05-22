@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/png" href="static/css/img/logo.png">
 <style>
     /* Reset CSS */
     * {
@@ -99,24 +100,12 @@
       width: calc(100% - 20px);
     }
 
-	.logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 100px;
-            height: auto;
-            border-radius: 50%; /* Bord arrondi */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Ombre */
-        }
+
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="static/ccs/img/logo.png" alt="Logo de votre site">
-        </div>
-    </header>
+
     <div class="container">
     <h1>Création d'annonce</h1>
     <form id="annonce-form" action="{{ url_for('creer_annonce') }}" method="POST">
@@ -143,6 +132,12 @@
                 <option value="football">Football</option>
                 <option value="basketball">Basketball</option>
                 <option value="tennis">Tennis</option>
+                <option value="badminton">Badminton</option>
+                <option value="boxe">Boxe</option>
+                <option value="golf">Golf</option>
+                <option value="velo">Velo</option>
+                <option value="volley">Volley</option>
+                <option value="ping pong">Ping pong</option>
             </select>
         </div>
         <div class="form-group">
