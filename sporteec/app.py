@@ -127,6 +127,21 @@ def deposer():
         return redirect(url_for('index'))
     return render_template('deposer.html')
 
+@app.route('/user')
+def user():
+    if 'email' not in session:
+        flash('Vous devez être connecté pour déposer une annonce.', 'error')
+        return redirect(url_for('index'))
+    return render_template('user_profile.html')
+
+@app.route('/edit')
+def edit():
+    if 'email' not in session:
+        flash('Vous devez être connecté pour déposer une annonce.', 'error')
+        return redirect(url_for('index'))
+    return render_template('edit_profile.html')
+
+
 def save_annonce(titre, description, date, heure, sport, niveau, lieu, email, nom_utilisateur):
     with open(annonces_json_path, 'r') as f:
         annonces = json.load(f)
