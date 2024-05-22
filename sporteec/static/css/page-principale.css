@@ -1,188 +1,211 @@
-body,header{
-    margin: 0;
+
+body,
+header {
+  margin: 0;
 }
+
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
+
+/* Search Box */
+
 .box {
-    position: relative;
-    flex-grow: 1; /* Allow the search box to take available space */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  position: relative;
+  flex-grow: 1; /* Allow the search box to take available space */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .input {
-    padding: 10px;
-    width: 80px;
-    height: 80px;
-    background: none;
-    border: 4px solid #ffd52d;
-    border-radius: 50px;
-    box-sizing: border-box;
-    font-family: Comic Sans MS;
-    font-size: 26px;
-    color: #ffd52d;
-    outline: none;
-    transition: .5s;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  background: none;
+  border: 4px solid #ffd52d;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-family: Comic Sans MS;
+  font-size: 26px;
+  color: #ffd52d;
+  outline: none;
+  transition: .5s;
 }
+
 .input:hover,
 .input:focus {
-    width: 350px;
-    background: #3b3640;
-    border-radius: 10px;
+  width: 350px;
+  background: #3b3640;
+  border-radius: 10px;
 }
-.box i{
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translate(-50%,-50%);
-    font-size: 26px;
-    color: #ffd52d;
-    transition: .2s;
+
+.box i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  color: #ffd52d;
+  transition: .2s;
 }
+
 .box:hover i,
 .input:focus + i {
-    opacity: 0;
-    z-index: -1;
+  opacity: 0;
+  z-index: -1;
 }
 
-#sidebar1{
-    position: fixed;
-    margin-top: 124px;
-    left: 0;
-    width: 17%;
-    height: 100%;
-    background-color: #dadada94;
-    color: #fff;
-    overflow-y: auto; 
-    padding-top: 20px;
+/* Sidebars */
+
+#sidebar1 {
+  position: fixed;
+  margin-top: 124px;
+  left: 0;
+  width: 17%;
+  height: 100%;
+  background-color: #dadada94;
+  color: #fff;
+  overflow-y: auto;
+  padding-top: 20px;
 }
 
-#sidebar2{
-    position: fixed;
-    margin-top: 124px;
-    right: 0;
-    width: 83%;
-    height: 100%;
-    background-color: #f8e0e0;
-    color: #fff;
-    overflow-y: auto;
-    padding-top: 20px;
+#sidebar2 {
+  position: fixed;
+  margin-top: 124px;
+  right: 0;
+  width: 83%;
+  height: 100%;
+  background-color: #f8e0e0;
+  color: #fff;
+  overflow-y: auto;
+  padding-top: 20px;
 }
-.case{
-    z-index: 3;
-    width: 100%;
-    height: 80%;
-    background-color: #f8e0e000;
-    color: #000000;
-    border-radius: 10px;
-    padding-top: 20px;
-}
-.case_content {
-    display: flex;
-    align-items: flex-start; /* Alignez les éléments sur le bord supérieur */
-    background-color: #ffffff; 
-    color: #000000; 
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 97%; /* Reduce the width */
+
+/* Announcements */
+
+.case {
+  z-index: 3;
+  width: 100%;
+  height: 80%;
+  background-color: #f8e0e000;
+  color: #000000;
+  border-radius: 10px;
+  padding-top: 20px;
 }
 
 .annonce-details {
-    display: flex;
-    flex: 1; /* Faites en sorte que les détails de l'annonce occupent tout l'espace restant */
-    margin-right: 20px; /* Ajoutez un espacement entre les détails de l'annonce et la carte */
+  display: flex;
+  flex: 1; /* Make announcement details take up remaining space */
+  margin-right: 20px; /* Add spacing between details and map */
 }
 
 .left-info,
 .right-info {
-    flex: 1; /* Divisez l'espace disponible en deux colonnes */
-    margin-left: 20px;
-    margin-right: 20px;
+  flex: 1; /* Divide available space into two columns */
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-/* Ajoutez ces styles pour la carte Google Maps */
+/* Google Maps */
+
+.case_content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 97%; /* Reduce the width */
+}
+
 .map-container {
-    width: 500px; /* Adjust the width of the map */
-    height: 350px; /* Adjust the height of the map */
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Allow the map container to grow or shrink proportionally */
+  height: 350px; /* Adjust as needed */
+  margin-left: 20px; /* Add margin to the left of the map */
+  margin-right: 20px; /* Add margin to the right of the map */
 }
-
 .map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+  width: 100%; /* Set the iframe width to 100% of its container */
+  height: 100%; /* Set the iframe height to 100% of its container */
+  border: 0;
 }
+ 
 
-.scrollable-content {
+  /* Scrollable Content */
+  
+  .scrollable-content {
     padding: 20px;
-}
-
-/* Style de la barre défilante */
-.sidebar h2 {
+  }
+  
+  /* Sidebar Styles */
+  
+  .sidebar h2 {
     margin-top: 0;
-}
-
-.sidebar ul {
+  }
+  
+  .sidebar ul {
     list-style-type: none;
     padding: 0;
-}
-
-.sidebar ul li {
+  }
+  
+  .sidebar ul li {
     padding: 10px 0;
     border-bottom: 1px solid #555;
-}
-
-.sidebar ul li:last-child {
+  }
+  
+  .sidebar ul li:last-child {
     border-bottom: none;
-}
-
-::-webkit-scrollbar {  
+  }
+  
+  ::-webkit-scrollbar {
     width: 5px;
-}
-
-::-webkit-scrollbar-track {
+  }
+  
+  ::-webkit-scrollbar-track {
     background-color: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
+  }
+  
+  ::-webkit-scrollbar-thumb {
     background-color: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
-}
-.logos{
+  }
+  
+  /* Logos and Titles */
+  
+  .logos {
     width: 50%;
     margin-bottom: 50px;
-}
-.subtitle{
-    color: #0086d3; 
+  }
+  
+  .subtitle {
+    color: #0086d3;
     font-size: 30px;
     font-family: "Lexend", sans-serif;
-    font-weight: 700; 
-}
-.recommendations{
-    color: #0086d3; 
+    font-weight: 700;
+  }
+  
+  .recommendations {
+    color: #0086d3;
     font-size: 30px;
     font-family: "Lexend", sans-serif;
-    font-weight: 700; 
+    font-weight: 700;
     margin-left: 60%;
-}
-
-header {
-    background: linear-gradient(to right, #dc0073, #1ff6fd) no-repeat 0 0 / cover;
+  }
+  
+  /* Header */
+  
+  header {
+    background: linear-gradient(to right, #dc0073, #1ff6fd) no-repeat 0 0 /
+      cover;
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -190,43 +213,45 @@ header {
     display: flex;
     justify-content: space-between; /* Distribute space between items */
     align-items: center; /* Center items vertically */
-}
-
-.logo img {
-    max-width: 100px; 
-    height: auto; 
-    margin-right: 100px; 
+  }
+  
+  .logo img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 100px;
     border-radius: 22px;
     margin-left: 30px;
-}
-
-nav {
+  }
+  
+  nav {
     display: flex;
     align-items: center;
-}
-
-nav ul {
+  }
+  
+  nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-}
-
-nav ul li {
+  }
+  
+  nav ul li {
     margin-right: 30px;
-}
-
-nav ul li:last-child {
+  }
+  
+  nav ul li:last-child {
     margin-right: 0;
-}
-
-nav ul li a {
+  }
+  
+  nav ul li a {
     color: #ff0000;
     text-decoration: none;
-}
-
-.btn {
+  }
+  
+  /* Button Styles */
+  
+  .btn {
     font-family: "Lexend", sans-serif;
     background-color: #0066ff;
     color: #fff;
@@ -238,9 +263,19 @@ nav ul li a {
     align-items: center;
     width: auto; /* Adjust to fit the content */
     height: auto; /* Adjust to fit the content */
-}
-
-.photo {
+  }
+  
+  /* Photo */
+  
+  .photo {
     width: 100px;
     margin-right: 40px;
-}
+  }
+  
+  /* "Tout afficher" Button */
+  
+  #tout-afficher-btn {
+    border: none; /* Remove the default button border */
+    background-color: inherit; /* Keep the background color of the button */
+    cursor: pointer; /* Indicate that it's a clickable button */
+  }
